@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>在庫宣伝システム | EXSEA × NILE</title>
+<style>
+  :root{
+    --bg:#0f1420; --panel:#1a2233; --panel2:#212c42; --line:#2e3b57;
+    --txt:#e8edf7; --sub:#8fa0bd; --accent:#3b82f6; --green:#22c55e;
+    --hybrid:#22c55e; --petrol:#f59e0b; --diesel:#8b5cf6; --gold:#fbbf24;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--txt);font-family:"Segoe UI","Hiragino Sans","Meiryo",sans-serif;padding-bottom:120px}
+  header{background:linear-gradient(135deg,#16213a,#0f1420);border-bottom:1px solid var(--line);padding:16px 20px;position:sticky;top:0;z-index:50}
+  header h1{font-size:20px;display:flex;align-items:center;gap:10px}
+  header h1 .badge{font-size:11px;background:var(--accent);padding:2px 8px;border-radius:10px}
+  .meta{color:var(--sub);font-size:12px;margin-top:4px}
+  .wrap{max-width:1280px;margin:0 auto;padding:16px 20px}
+
+  /* 設定パネル */
+  .settings{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:14px;display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end}
+  .settings .f{display:flex;flex-direction:column;gap:4px}
+  .settings label{font-size:11px;color:var(--sub)}
+  .settings input[type=number], .settings input[type=text]{background:var(--panel2);border:1px solid var(--line);color:var(--txt);border-radius:8px;padding:7px 10px;width:110px;font-size:14px}
+  .settings .note{font-size:11px;color:var(--sub);flex-basis:100%}
+
+  /* フィルタ */
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;align-items:center}
+  .tab{background:var(--panel);border:1px solid var(--line);color:var(--sub);padding:8px 16px;border-radius:20px;cursor:pointer;font-size:13px;transition:.15s}
+  .tab:hover{border-color:var(--accent)}
+  .tab.on{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+  .tab.fuel-Hybrid.on{background:var(--hybrid);border-color:var(--hybrid)}
+  .tab.fuel-Petrol.on{background:var(--petrol);border-color:var(--petrol)}
+  .tab.fuel-Diesel.on{background:var(--diesel);border-color:var(--diesel)}
+  .filters .spacer{flex:1}
+  .filters select,.filters input[type=text]{background:var(--panel);border:1px solid var(--line);color:var(--txt);border-radius:8px;padding:8px 10px;font-size:13px}
+
+  .toolbar{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+  .btn{border:none;border-radius:8px;padding:9px 14px;font-size:13px;cursor:pointer;font-weight:600;transition:.15s}
+  .btn.ghost{background:var(--panel);color:var(--sub);border:1px solid var(--line)}
+  .btn.ghost:hover{color:var(--txt);border-color:var(--accent)}
+  .btn.edit-on{background:var(--gold);color:#08101e;border-color:var(--gold)}
+  .btn.gold{background:var(--gold);color:#08101e}
+  .btn.gold:hover{filter:brightness(1.1)}
+
+  /* 値引き選択 */
+  .discbox{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
+  .discbox .drow{display:flex;align-items:center;gap:8px;font-size:12px;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:6px 10px;flex-wrap:wrap}
+  .discbox .drow .nm{flex:1;min-width:140px;color:var(--txt);font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .discbox .drow select{background:var(--panel);border:1px solid var(--gold);color:var(--txt);border-radius:6px;padding:4px 8px;font-size:12px}
+  .discbox .drow .after{color:var(--gold);font-weight:700;min-width:150px;text-align:right}
+  .discbox .dall{background:linear-gradient(90deg,rgba(251,191,36,.12),transparent);border-color:var(--gold)}
+
+  /* 編集モード */
+  .editrow{display:flex;align-items:center;gap:6px;font-size:12px}
+  .editrow label{color:var(--sub);width:58px;flex-shrink:0}
+  .editrow input,.editrow select{flex:1;background:var(--panel2);border:1px solid var(--gold);color:var(--txt);border-radius:6px;padding:5px 8px;font-size:13px;width:100%;min-width:0}
+  .ovrbadge{position:absolute;bottom:8px;left:8px;font-size:10px;font-weight:700;padding:3px 8px;border-radius:10px;background:var(--gold);color:#08101e}
+  .btn.reset{background:none;border:1px dashed var(--sub);color:var(--sub);font-size:11px;padding:5px 8px}
+  .btn.reset:hover{border-color:#f87171;color:#f87171}
+
+  /* カードグリッド */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;position:relative;transition:.15s;display:flex;flex-direction:column}
+  .card:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .card.sel{border-color:var(--green);box-shadow:0 0 0 2px var(--green)}
+  .card .imgbox{position:relative;height:180px;background:#0a0e17;cursor:pointer}
+  .card img{width:100%;height:100%;object-fit:cover;display:block}
+  .card .noimg{display:flex;align-items:center;justify-content:center;height:100%;color:var(--sub);font-size:13px}
+  .fuelbadge{position:absolute;top:8px;left:8px;font-size:11px;font-weight:700;padding:3px 10px;border-radius:10px;color:#08101e}
+  .fuelbadge.Hybrid{background:var(--hybrid)} .fuelbadge.Petrol{background:var(--petrol)}
+  .fuelbadge.Diesel{background:var(--diesel)} .fuelbadge.Other{background:#64748b;color:#fff}
+  .srcbadge{position:absolute;top:8px;right:8px;font-size:10px;padding:3px 8px;border-radius:10px;background:rgba(0,0,0,.65);color:#fff;border:1px solid rgba(255,255,255,.25)}
+  .ck{position:absolute;bottom:8px;right:8px;width:26px;height:26px;accent-color:var(--green);cursor:pointer}
+  .card .body{padding:12px 14px;flex:1;display:flex;flex-direction:column;gap:6px}
+  .card .name{font-size:15px;font-weight:700}
+  .card .specs{font-size:12px;color:var(--sub)}
+  .prices{background:var(--panel2);border-radius:10px;padding:8px 10px;font-size:12px;display:flex;flex-direction:column;gap:3px;margin-top:2px}
+  .prices .row{display:flex;justify-content:space-between}
+  .prices .row b{color:var(--gold)}
+  .prices .row.cif b{color:var(--green);font-size:14px}
+  .card .acts{display:flex;gap:6px;margin-top:8px}
+  .card .acts .btn{flex:1;padding:7px 4px;font-size:12px}
+  .btn.wa{background:#25d366;color:#08101e}
+  .btn.mail{background:var(--accent);color:#fff}
+  .btn.wa:hover,.btn.mail:hover,.btn:hover{filter:brightness(1.12)}
+
+  /* 選択バー */
+  .selbar{position:fixed;bottom:0;left:0;right:0;background:#0c1220;border-top:2px solid var(--green);padding:12px 20px;display:none;z-index:100}
+  .selbar.show{display:block}
+  .selbar .inner{max-width:1280px;margin:0 auto;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .selbar .cnt{font-weight:700;color:var(--green)}
+  .selbar .btn{padding:11px 18px;font-size:14px}
+
+  /* モーダル */
+  .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;padding:20px;overflow:auto}
+  .modal.show{display:flex;align-items:flex-start;justify-content:center}
+  .mbox{background:var(--panel);border:1px solid var(--line);border-radius:14px;max-width:720px;width:100%;padding:20px;margin-top:20px}
+  .mbox h2{font-size:16px;margin-bottom:10px}
+  .mbox textarea{width:100%;height:340px;background:var(--panel2);border:1px solid var(--line);color:var(--txt);border-radius:10px;padding:12px;font-size:13px;line-height:1.5;font-family:inherit;resize:vertical}
+  .mbox .row{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;align-items:center}
+  .mbox input[type=text]{background:var(--panel2);border:1px solid var(--line);color:var(--txt);border-radius:8px;padding:9px 10px;font-size:13px;flex:1;min-width:180px}
+  .mbox .hint{font-size:11px;color:var(--sub);margin-top:8px}
+  .mclose{float:right;background:none;border:none;color:var(--sub);font-size:20px;cursor:pointer}
+  .empty{text-align:center;color:var(--sub);padding:60px 0;font-size:14px}
+  .toast{position:fixed;top:70px;left:50%;transform:translateX(-50%);background:var(--green);color:#08101e;font-weight:700;padding:10px 22px;border-radius:20px;z-index:300;display:none}
+</style>
+</head>
+<body>
+<header>
+  <h1>🚗 在庫宣伝システム <span class="badge">EXSEA × NILE</span></h1>
+  <div class="meta" id="meta">データ読込中...</div>
+</header>
+
+<div class="wrap">
+  <!-- 計算設定（エクセル計算機のロジック・多通貨対応） -->
+  <div class="settings">
+    <div class="f"><label>🌏 仕向け国・通貨</label><select id="market" onchange="switchMarket()"></select></div>
+    <div class="f"><label id="rateLabel">為替レート NZ$1 = 円</label><input type="number" id="rate" value="93" step="0.5"></div>
+    <div class="f"><label id="freightLabel">Freight（海上運賃 NZ$）</label><input type="number" id="freight" value="2000" step="50"></div>
+    <div class="f"><label id="taxLabel">GST（%）</label><input type="number" id="gst" value="15" step="1"></div>
+    <div class="f"><label>WhatsApp送信先（任意・国番号から）</label><input type="text" id="waNum" placeholder="例 64211234567"></div>
+    <div class="f"><label>メール送信先（任意）</label><input type="text" id="mailTo" placeholder="buyer@example.com"></div>
+    <div class="note" id="calcNote">Landed Cost (CIF) = FOB + Freight ／ 税込 = CIF × (1+税率)　※国を切り替えるとレート・運賃・税率がその国の保存値に変わり、全車両が即再計算されます。</div>
+  </div>
+
+  <!-- 燃料タブ -->
+  <div class="filters" id="fuelTabs">
+    <button class="tab on" data-fuel="ALL">すべて</button>
+    <button class="tab fuel-Hybrid" data-fuel="Hybrid">⚡ ハイブリッド</button>
+    <button class="tab fuel-Petrol" data-fuel="Petrol">⛽ ガソリン</button>
+    <button class="tab fuel-Diesel" data-fuel="Diesel">🛢 ディーゼル</button>
+  </div>
+  <!-- 在庫元タブ -->
+  <div class="filters" id="srcTabs">
+    <button class="tab on" data-src="ALL">全在庫</button>
+    <button class="tab" data-src="EXSEA">EXSEA（自社）</button>
+    <button class="tab" data-src="NILE">NILE</button>
+    <button class="tab" data-src="NILE-TradeIn">NILE Trade-in</button>
+    <button class="tab" data-src="ATM">ATM International</button>
+    <span class="spacer"></span>
+    <input type="text" id="q" placeholder="🔍 車名検索..." oninput="render()">
+    <select id="sort" onchange="render()">
+      <option value="new">年式が新しい順</option>
+      <option value="old">年式が古い順</option>
+      <option value="cheap">価格が安い順</option>
+      <option value="exp">価格が高い順</option>
+    </select>
+  </div>
+
+  <div class="toolbar">
+    <button class="btn ghost" onclick="selectAllVisible(true)">表示中を全選択</button>
+    <button class="btn ghost" onclick="selectAllVisible(false)">選択解除</button>
+    <button class="btn ghost" id="editBtn" onclick="toggleEdit()">✏️ 編集モード</button>
+    <button class="btn ghost" id="resetAllBtn" style="display:none" onclick="resetAllOvr()">↩ 全修正をリセット</button>
+  </div>
+
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty" style="display:none">該当する車両がありません</div>
+</div>
+
+<!-- 選択バー -->
+<div class="selbar" id="selbar">
+  <div class="inner">
+    <span class="cnt" id="selCnt">0台選択中</span>
+    <button class="btn wa" onclick="openCompose('wa')">📱 WhatsAppで営業</button>
+    <button class="btn mail" onclick="openCompose('mail')">✉️ メールで営業</button>
+    <button class="btn ghost" onclick="openCompose('copy')">📋 文面コピー</button>
+    <button class="btn ghost" onclick="selectAllVisible(false)">クリア</button>
+  </div>
+</div>
+
+<!-- 文面プレビュー -->
+<div class="modal" id="modal">
+  <div class="mbox">
+    <button class="mclose" onclick="closeModal()">✕</button>
+    <h2 id="mTitle">営業メッセージ プレビュー（送信前に編集OK）</h2>
+    <div class="drow dall" style="display:flex;align-items:center;gap:8px;font-size:12px;margin-bottom:8px">
+      <span style="font-weight:700">📝 営業文パターン</span>
+      <select id="ptn" onchange="setPattern(this.value)" style="flex:1;background:var(--panel2);border:1px solid var(--gold);color:var(--txt);border-radius:6px;padding:5px 8px;font-size:12px"></select>
+    </div>
+    <div id="discRow" class="discbox"></div>
+    <textarea id="msgBox"></textarea>
+    <div class="row">
+      <button class="btn wa" onclick="sendWA()">📱 WhatsAppを開く</button>
+      <button class="btn mail" onclick="sendMail()">✉️ メールを開く</button>
+      <button class="btn gold" onclick="copyRich()">🖼 写真＋リンク付きコピー（メール用）</button>
+      <button class="btn ghost" onclick="copyMsg()">📋 文字だけコピー</button>
+      <button class="btn ghost" onclick="copyPhotoLinks()">🖼 写真リンクだけコピー</button>
+    </div>
+    <div class="hint">※ <b>メールで写真を出す方法：</b>「写真＋リンク付きコピー」→ Gmail/Outlookの本文に貼り付け（Ctrl+V）→ 各車の写真1枚目とタップで飛べるリンク・緑の「View Photos」ボタンがそのまま入ります。<br>※ WhatsAppは文字のみ送信ですが、リンクは相手側で自動的にタップできる青いリンクになり、1台目は写真プレビューも自動表示されます。</div>
+  </div>
+</div>
+
+<div class="toast" id="toast">コピーしました ✔</div>
+
+<script src="inventory_data.js"></script>
+<script>
+const INV = window.INVENTORY || {updated:"（データなし）", counts:{}, cars:[]};
+let fuelFilter = "ALL", srcFilter = "ALL";
+const selected = new Set();
+
+// ---------- 編集モード（修正はlocalStorageに保存され、データ更新後も維持） ----------
+let editMode = false;
+let OVR = {};
+try { OVR = JSON.parse(localStorage.getItem('zaiko_ovr') || '{}'); } catch(e){ OVR = {}; }
+function saveOvr(){ localStorage.setItem('zaiko_ovr', JSON.stringify(OVR)); }
+function eff(c){ const o = OVR[carKey(c)]; return o ? Object.assign({}, c, o) : c; }
+function esc(s){ return (s==null?'':String(s)).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;'); }
+function setOvr(ek, field, val){
+  const k = decodeURIComponent(ek);
+  OVR[k] = OVR[k] || {};
+  if(field === 'fob_jpy') val = parseInt(String(val).replace(/[^0-9]/g,'')) || 0;
+  OVR[k][field] = val;
+  saveOvr(); render();
+}
+function resetOvr(ek){
+  delete OVR[decodeURIComponent(ek)];
+  saveOvr(); render();
+}
+function resetAllOvr(){
+  if(!Object.keys(OVR).length) return;
+  if(confirm('すべての手動修正を元のデータに戻します。よろしいですか？')){ OVR = {}; saveOvr(); render(); }
+}
+function toggleEdit(){
+  editMode = !editMode;
+  const b = document.getElementById('editBtn');
+  b.classList.toggle('edit-on', editMode);
+  b.textContent = editMode ? '✅ 編集を終了' : '✏️ 編集モード';
+  document.getElementById('resetAllBtn').style.display = editMode ? '' : 'none';
+  render();
+}
+
+function fmt(n){ return n ? n.toLocaleString() : "-"; }
+
+// ---------- 多通貨マーケット設定（国ごとにレート・運賃・税率を保存） ----------
+const MARKETS = {
+  NZD: {label:"🇳🇿 ニュージーランド（NZ$）", cur:"NZ$", flag:"🇳🇿", dest:"NZ",        rate:93,  freight:2000, tax:15, taxName:"GST"},
+  USD: {label:"🌍 アフリカ等・米ドル（US$）", cur:"US$", flag:"🌍", dest:"your market", rate:150, freight:1500, tax:0,  taxName:"Duty/VAT"},
+  AUD: {label:"🇦🇺 オーストラリア（A$）",     cur:"A$",  flag:"🇦🇺", dest:"Australia",  rate:97,  freight:2200, tax:10, taxName:"GST"},
+  MYR: {label:"🇲🇾 マレーシア（RM）",         cur:"RM",  flag:"🇲🇾", dest:"Malaysia",   rate:33,  freight:1600, tax:10, taxName:"SST"},
+  KES: {label:"🇰🇪 ケニア（US$建て）",        cur:"US$", flag:"🇰🇪", dest:"Kenya",      rate:150, freight:1400, tax:0,  taxName:"Duty/VAT"},
+};
+let curMarket = localStorage.getItem('zaiko_market') || 'NZD';
+let MKT = {};
+try { MKT = JSON.parse(localStorage.getItem('zaiko_mkt') || '{}'); } catch(e){ MKT = {}; }
+
+function mk(){ return MARKETS[curMarket] || MARKETS.NZD; }
+function cur(){ return mk().cur; }
+function mval(field){
+  const saved = MKT[curMarket];
+  return (saved && saved[field] != null) ? saved[field] : mk()[field];
+}
+function saveMarketVals(){
+  MKT[curMarket] = {
+    rate: parseFloat(document.getElementById('rate').value) || mk().rate,
+    freight: parseFloat(document.getElementById('freight').value) || 0,
+    tax: parseFloat(document.getElementById('gst').value) || 0,
+  };
+  localStorage.setItem('zaiko_mkt', JSON.stringify(MKT));
+}
+function applyMarketUI(){
+  const m = mk();
+  document.getElementById('rate').value = mval('rate');
+  document.getElementById('freight').value = mval('freight');
+  document.getElementById('gst').value = mval('tax');
+  document.getElementById('rateLabel').textContent = `為替レート ${m.cur}1 = 円`;
+  document.getElementById('freightLabel').textContent = `Freight（海上運賃 ${m.cur}）`;
+  document.getElementById('taxLabel').textContent = `${m.taxName}（%）現地税率`;
+}
+function switchMarket(){
+  saveMarketVals.skip = true;
+  curMarket = document.getElementById('market').value;
+  localStorage.setItem('zaiko_market', curMarket);
+  applyMarketUI();
+  render();
+}
+function rate(){ return parseFloat(document.getElementById('rate').value) || mk().rate; }
+function freight(){ return parseFloat(document.getElementById('freight').value) || 0; }
+function gstPct(){ return (parseFloat(document.getElementById('gst').value) || 0)/100; }
+
+// エクセル計算機と同じ: FOB通貨 = FOB円/レート、CIF = FOB+Freight、税込 = CIF×(1+税率)
+function calc(car){
+  if(!car.fob_jpy) return null;
+  const fobCur = car.fob_jpy / rate();
+  const cif = fobCur + freight();
+  const landed = cif * (1 + gstPct());
+  return {fobNZD: Math.round(fobCur), fobCur: Math.round(fobCur), cif: Math.round(cif), landed: Math.round(landed)};
+}
+
+function fuelIcon(f){ return f==="Hybrid"?"⚡":f==="Diesel"?"🛢":"⛽"; }
+function carKey(c){ return c.source + "|" + c.link; }
+
+function visibleCars(){
+  const q = document.getElementById('q').value.trim().toLowerCase();
+  let list = INV.cars.map(eff).filter(c =>
+    (fuelFilter==="ALL" || c.fuel===fuelFilter) &&
+    (srcFilter==="ALL" || c.source===srcFilter) &&
+    (!q || (c.name+" "+c.year+" "+c.grade).toLowerCase().includes(q))
+  );
+  const s = document.getElementById('sort').value;
+  list.sort((a,b)=>{
+    if(s==="new") return (b.year||0)-(a.year||0);
+    if(s==="old") return (a.year||0)-(b.year||0);
+    if(s==="cheap") return (a.fob_jpy||9e9)-(b.fob_jpy||9e9);
+    return (b.fob_jpy||0)-(a.fob_jpy||0);
+  });
+  return list;
+}
+
+function render(){
+  const grid = document.getElementById('grid');
+  const list = visibleCars();
+  document.getElementById('empty').style.display = list.length ? "none":"block";
+  grid.innerHTML = list.map(c=>{
+    const k = carKey(c), ek = encodeURIComponent(k), p = calc(c), sel = selected.has(k);
+    const hasOvr = !!OVR[k];
+    const body = editMode ? `
+        <div class="editrow"><label>車名</label><input value="${esc(c.name)}" onchange="setOvr('${ek}','name',this.value)"></div>
+        <div class="editrow"><label>グレード</label><input value="${esc(c.grade)}" onchange="setOvr('${ek}','grade',this.value)"></div>
+        <div class="editrow"><label>年式</label><input value="${esc(c.year)}" onchange="setOvr('${ek}','year',this.value)"></div>
+        <div class="editrow"><label>走行km</label><input value="${esc(c.km)}" onchange="setOvr('${ek}','km',this.value)"></div>
+        <div class="editrow"><label>FOB（円）</label><input value="${c.fob_jpy||''}" placeholder="値引き後の価格" onchange="setOvr('${ek}','fob_jpy',this.value)"></div>
+        <div class="editrow"><label>燃料</label><select onchange="setOvr('${ek}','fuel',this.value)">
+          ${['Hybrid','Petrol','Diesel'].map(f=>`<option value="${f}" ${c.fuel===f?'selected':''}>${fuelIcon(f)} ${f}</option>`).join('')}
+        </select></div>
+        <div class="prices">${p?`<div class="row cif"><span>Landed CIF+税込</span><b>${cur()}${fmt(p.landed)}</b></div>`:`<div class="row"><span>価格未設定</span><b>要問合せ</b></div>`}</div>
+        ${hasOvr?`<button class="btn reset" onclick="resetOvr('${ek}')">↩ この車の修正を元に戻す</button>`:''}` : `
+        <div class="name">${c.year} ${esc(c.name)}${c.grade?` <span style="color:var(--sub);font-weight:400">${esc(c.grade)}</span>`:''}</div>
+        <div class="specs">${fmt(parseInt((c.km+'').replace(/,/g,'')))} km ${c.ref?` ／ Ref: ${c.ref}`:''}</div>
+        <div class="prices">
+          <div class="row"><span>FOB（円）</span><b>${c.fob_jpy?`¥${fmt(c.fob_jpy)}`:'要問合せ'}</b></div>
+          ${p?`<div class="row"><span>FOB（${cur()}）</span><b>${cur()}${fmt(p.fobCur)}</b></div>
+          <div class="row cif"><span>Landed CIF+税込</span><b>${cur()}${fmt(p.landed)}</b></div>`:''}
+        </div>
+        <div class="acts">
+          <button class="btn wa" onclick="quickSend('${ek}','wa')">WhatsApp</button>
+          <button class="btn mail" onclick="quickSend('${ek}','mail')">メール</button>
+        </div>`;
+    return `<div class="card ${sel?'sel':''}" data-k="${ek}">
+      <div class="imgbox" onclick="window.open('${c.link}','_blank')">
+        ${c.img?`<img src="${c.img}" loading="lazy" onerror="this.outerHTML='<div class=noimg>NO PHOTO</div>'">`:`<div class="noimg">NO PHOTO</div>`}
+        <span class="fuelbadge ${c.fuel||'Other'}">${fuelIcon(c.fuel)} ${c.fuel||'?'}</span>
+        <span class="srcbadge">${c.source}</span>
+        ${hasOvr?`<span class="ovrbadge">✏️ 修正済</span>`:''}
+        <input type="checkbox" class="ck" ${sel?'checked':''} onclick="event.stopPropagation();toggleSel('${ek}')">
+      </div>
+      <div class="body">${body}</div>
+    </div>`;
+  }).join("");
+  updateSelbar();
+}
+
+function toggleSel(ek){
+  const k = decodeURIComponent(ek);
+  selected.has(k) ? selected.delete(k) : selected.add(k);
+  render();
+}
+function selectAllVisible(on){
+  visibleCars().forEach(c=> on ? selected.add(carKey(c)) : selected.delete(carKey(c)));
+  if(!on) selected.clear();
+  render();
+}
+function updateSelbar(){
+  const n = selected.size;
+  document.getElementById('selbar').classList.toggle('show', n>0);
+  document.getElementById('selCnt').textContent = `${n}台選択中`;
+}
+
+// ---------- 売り文句の自動生成（EXSEA/Nileサイトの文言トーンを踏襲） ----------
+const POPULAR_NZ = ["aqua","prius","corolla","fielder","axio","note","fit","vezel","demio","mazda2","cx-5","cx5","impreza","swift","serena","freed","shuttle","harrier","rav4","vitz","yaris"];
+function sellingPoints(c){
+  const pts = [];
+  const yr = parseInt(c.year)||0;
+  const km = parseInt((c.km+'').replace(/,/g,''))||0;
+  const nm = (c.name+' '+(c.grade||'')).toLowerCase();
+  const age = Math.max(1, 2026 - yr);
+  if(c.fuel==='Hybrid') pts.push(`⚡ Super fuel-saver hybrid — perfect for today's fuel prices in ${mk().dest}`);
+  if(km && km/age < 8500) pts.push("✨ Genuine LOW kms for its year — hard to find!");
+  else if(km && km < 60000) pts.push("✨ Excellent low mileage!");
+  if(/lexus|crown|alphard|vellfire|harrier|gt-r|skyline/.test(nm)) pts.push("👑 Premium class — dealer-grade condition, quality you can trust");
+  if(yr >= 2019) pts.push("🚗 Late model with modern safety & tech");
+  if(POPULAR_NZ.some(m=>nm.includes(m))) pts.push(`🔥 Proven hot seller in ${mk().dest} — moves fast!`);
+  if(c.source==="NILE-TradeIn") pts.push("🤝 Dealer trade-in direct — 100% transparency, uniquely Japan");
+  if(!pts.length) pts.push("✅ Well maintained, quality Japanese condition");
+  return pts.slice(0,2);
+}
+
+// ---------- 営業文パターン（5種・英語） ----------
+const PATTERNS = [
+  { name: "① 標準（フレッシュ在庫案内）",
+    intro: m => [`Hi! Fresh stock from Japan — ready for ${m.dest} ${m.flag}🚢`,
+                 `Top-quality, honestly described vehicles from a reliable Japanese exporter.`],
+    close: m => [`We make importing hassle-free — inspection, shipping & paperwork all handled.`,
+                 `First come, first served — reply now to reserve yours! 🙌`] },
+  { name: "② 価格相談ウェルカム（頑張ります）",
+    intro: m => [`Hi! Great news for smart buyers 👋`,
+                 `We're ready to work hard on pricing for you — so please don't hesitate to tell us your target budget or any car that catches your eye. Let's make a deal happen! 💪`],
+    close: m => [`No pressure, no obligation — just tell us what you're after and we'll do our very best on price.`,
+                 `Your wish list is always welcome. Reply anytime! 🤝`] },
+  { name: "③ 日本市場の相場観（今が買い時）",
+    intro: m => [`Market flash from Japan 🇯🇵📈`,
+                 `Auction prices for clean low-km cars are firming up month by month, while the yen remains buyer-friendly — today's FOB is genuinely good value. Prices like these may not last.`],
+    close: m => [`Lock in today's price — just reply with the car number and "HOLD".`,
+                 `We'll handle inspection, shipping & paperwork. Easy and hassle-free! 🙌`] },
+  { name: "④ 限定・早い者勝ち（緊急感）",
+    intro: m => [`⏰ This week's hot picks — once they're gone, they're gone!`,
+                 `Quality units like these get snapped up fast at Japanese auctions. Here's your early access:`],
+    close: m => [`⚡ First come, first served. One quick reply is all it takes to reserve.`,
+                 `Which one shall we hold for you? 😊`] },
+  { name: "⑤ リピーター・お得意様向け",
+    intro: m => [`Hi! Hope business is going well 😊`,
+                 `I hand-picked these units especially for you — checked, honestly graded, and ready to ship to ${m.dest}.`],
+    close: m => [`As always, we'll be flexible on price for you — just let me know your thoughts.`,
+                 `Thank you for your continued trust. Talk soon! 🤝`] },
+];
+let curPattern = parseInt(localStorage.getItem('zaiko_ptn')) || 0;
+function setPattern(v){
+  curPattern = parseInt(v)||0;
+  localStorage.setItem('zaiko_ptn', curPattern);
+  refreshCompose();
+}
+
+// ---------- メッセージ生成（英語・海外バイヤー向け） ----------
+function taxLabel(){
+  const g = Math.round(gstPct()*100);
+  return g ? `CIF + ${g}% ${mk().taxName}` : `CIF`;
+}
+function buildMessage(cars){
+  const r = rate(), f = freight(), m = mk(), C = cur();
+  const ptn = PATTERNS[curPattern] || PATTERNS[0];
+  let lines = [...ptn.intro(m), ""];
+  cars.forEach((c,i)=>{
+    const p = calc(c);
+    lines.push(`${i+1}) ${c.year} ${c.name}${c.grade?" "+c.grade:""} [${c.fuel}]`);
+    sellingPoints(c).forEach(s=> lines.push(`   ${s}`));
+    lines.push(`   • ${c.km} km`);
+    if(c.fob_jpy){
+      if(c._orig_fob){
+        lines.push(`   • 💰 SPECIAL OFFER: FOB JPY ${fmt(c.fob_jpy)} (was JPY ${fmt(c._orig_fob)}) — approx. ${C}${fmt(p.fobCur)}`);
+      } else {
+        lines.push(`   • FOB: JPY ${fmt(c.fob_jpy)} (approx. ${C}${fmt(p.fobCur)})`);
+      }
+      lines.push(`   • Est. Landed (${taxLabel()}): ${C}${fmt(p.landed)}`);
+    } else {
+      lines.push(`   • Price: Please ask!`);
+    }
+    lines.push(`   👉 Photos & details (tap link):`);
+    lines.push(`   ${c.link}`);
+    lines.push("");
+  });
+  lines.push(`Rate used: ${C}1 = ¥${r} / Freight ${C}${fmt(f)} incl.`);
+  lines.push(...ptn.close(m));
+  return lines.join("\n");
+}
+
+// ---------- HTMLメール用（写真＋クリックできるリンク付き） ----------
+function buildHtml(cars){
+  const r = rate(), g = Math.round(gstPct()*100), f = freight();
+  const blocks = cars.map((c,i)=>{
+    const p = calc(c);
+    const img = c.img ? `<a href="${c.link}"><img src="${c.img}" width="440" style="max-width:100%;border-radius:8px;display:block;margin:6px 0" alt="${esc(c.name)}"></a>` : '';
+    const C = cur();
+    const price = c.fob_jpy
+      ? (c._orig_fob
+        ? `💰 <b style="color:#c2410c">SPECIAL OFFER:</b> FOB <s style="color:#999">JPY ${fmt(c._orig_fob)}</s> → <b style="color:#c2410c">JPY ${fmt(c.fob_jpy)}</b> (approx. ${C}${fmt(p.fobCur)})<br>Est. Landed (${taxLabel()}): <b style="color:#0b6e4f">${C}${fmt(p.landed)}</b>`
+        : `FOB: <b>JPY ${fmt(c.fob_jpy)}</b> (approx. ${C}${fmt(p.fobCur)})<br>Est. Landed (${taxLabel()}): <b style="color:#0b6e4f">${C}${fmt(p.landed)}</b>`)
+      : `Price: <b>Please ask!</b>`;
+    const pts = sellingPoints(c).map(s=>`<div>${s}</div>`).join("");
+    return `<div style="margin:0 0 26px 0;padding:0 0 18px 0;border-bottom:1px solid #ddd">
+      <h3 style="margin:0 0 4px 0;font-size:17px"><a href="${c.link}" style="color:#1a5fb4;text-decoration:underline">${i+1}) ${c.year} ${esc(c.name)}${c.grade?" "+esc(c.grade):""} [${c.fuel}]</a></h3>
+      ${img}
+      <div style="font-size:14px;line-height:1.7;color:#222">${pts}
+      • ${c.km} km<br>• ${price}</div>
+      <a href="${c.link}" style="display:inline-block;margin-top:8px;background:#0b6e4f;color:#ffffff;padding:9px 20px;border-radius:6px;text-decoration:none;font-weight:bold">▶ View Photos &amp; Full Details</a>
+    </div>`;
+  }).join("");
+  const m = mk(), C2 = cur();
+  const ptn = PATTERNS[curPattern] || PATTERNS[0];
+  const introHtml = ptn.intro(m).map((l,i)=> i===0?`<b>${l}</b>`:l).join("<br>");
+  const closeHtml = ptn.close(m).map((l,i,a)=> i===a.length-1?`<b>${l}</b>`:l).join("<br>");
+  return `<div style="font-family:Arial,Helvetica,sans-serif;max-width:560px">
+    <p style="font-size:15px">${introHtml}</p>
+    ${blocks}
+    <p style="font-size:12px;color:#666">Rate used: ${C2}1 = ¥${r} / Freight ${C2}${fmt(f)} incl.</p>
+    <p style="font-size:14px">${closeHtml}</p>
+  </div>`;
+}
+async function copyRich(){
+  const html = buildHtml(discCars());
+  const text = document.getElementById('msgBox').value;
+  try{
+    await navigator.clipboard.write([new ClipboardItem({
+      "text/html": new Blob([html],{type:"text/html"}),
+      "text/plain": new Blob([text],{type:"text/plain"})
+    })]);
+    toast();
+  }catch(e){
+    // フォールバック: 一時要素を選択してコピー
+    const d = document.createElement('div');
+    d.contentEditable = true; d.innerHTML = html;
+    d.style.position='fixed'; d.style.left='-9999px'; d.style.background='#fff'; d.style.color='#000';
+    document.body.appendChild(d);
+    const rge = document.createRange(); rge.selectNodeContents(d);
+    const sel = getSelection(); sel.removeAllRanges(); sel.addRange(rge);
+    document.execCommand('copy');
+    sel.removeAllRanges(); d.remove();
+    toast();
+  }
+}
+
+let composeCars = [];
+let composeDisc = {};   // carKey → 値引き額(円)。モーダルを開くたびリセット
+
+const DISC_OPTIONS = [0,30000,50000,80000,100000,150000,200000,300000];
+function discLabel(v){ return v===0 ? "値引きなし" : `−${v/10000}万円`; }
+
+function discCars(){
+  return composeCars.map(c=>{
+    const d = composeDisc[carKey(c)] || 0;
+    if(!d || !c.fob_jpy) return c;
+    return Object.assign({}, c, { fob_jpy: Math.max(0, c.fob_jpy - d), _orig_fob: c.fob_jpy });
+  });
+}
+function refreshCompose(){
+  document.getElementById('msgBox').value = buildMessage(discCars());
+  renderDiscRow();
+}
+function setDisc(ek, v){
+  composeDisc[decodeURIComponent(ek)] = parseInt(v)||0;
+  refreshCompose();
+}
+function setDiscAll(v){
+  const d = parseInt(v)||0;
+  composeCars.forEach(c=>{ composeDisc[carKey(c)] = d; });
+  refreshCompose();
+}
+function renderDiscRow(){
+  const box = document.getElementById('discRow');
+  const opts = sel => DISC_OPTIONS.map(v=>`<option value="${v}" ${v===sel?'selected':''}>${discLabel(v)}</option>`).join("");
+  const all = composeCars.length > 1
+    ? `<div class="drow dall"><span class="nm">💰 全車まとめて値引き</span><select onchange="setDiscAll(this.value)"><option value="">選択…</option>${DISC_OPTIONS.map(v=>`<option value="${v}">${discLabel(v)}</option>`).join("")}</select><span class="after"></span></div>` : "";
+  box.innerHTML = all + composeCars.map(c=>{
+    const k = carKey(c), ek = encodeURIComponent(k), d = composeDisc[k]||0;
+    if(!c.fob_jpy) return "";
+    const newFob = Math.max(0, c.fob_jpy - d);
+    const p = calc(Object.assign({}, c, {fob_jpy:newFob}));
+    const after = d ? `¥${fmt(newFob)} → ${cur()}${fmt(p.landed)}` : `${cur()}${fmt(p.landed)}`;
+    return `<div class="drow"><span class="nm">${c.year} ${esc(c.name)}${d?' 💰':''}</span>
+      <select onchange="setDisc('${ek}',this.value)">${opts(d)}</select>
+      <span class="after">${after}</span></div>`;
+  }).join("");
+}
+
+function openCompose(mode){
+  composeCars = visibleCars().filter(c=>selected.has(carKey(c)));
+  if(!composeCars.length) return;
+  composeDisc = {};
+  refreshCompose();
+  document.getElementById('modal').classList.add('show');
+  if(mode==='wa') sendWA(true);
+  if(mode==='mail') sendMail(true);
+  if(mode==='copy') copyMsg();
+}
+function quickSend(ek, mode){
+  const k = decodeURIComponent(ek);
+  composeCars = INV.cars.filter(c=>carKey(c)===k).map(eff);
+  composeDisc = {};
+  refreshCompose();
+  document.getElementById('modal').classList.add('show');
+}
+function closeModal(){ document.getElementById('modal').classList.remove('show'); }
+
+function sendWA(preview){
+  const msg = document.getElementById('msgBox').value;
+  const num = document.getElementById('waNum').value.replace(/[^0-9]/g,'');
+  const url = num ? `https://wa.me/${num}?text=${encodeURIComponent(msg)}`
+                  : `https://wa.me/?text=${encodeURIComponent(msg)}`;
+  if(preview!==true) window.open(url,'_blank');
+}
+function sendMail(preview){
+  const msg = document.getElementById('msgBox').value;
+  const to = document.getElementById('mailTo').value.trim();
+  const subj = `Japan Stock Offer — ${composeCars.length} vehicle(s) for ${mk().dest}`;
+  if(preview!==true) location.href = `mailto:${to}?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(msg)}`;
+}
+function copyMsg(){
+  navigator.clipboard.writeText(document.getElementById('msgBox').value).then(toast);
+}
+function copyPhotoLinks(){
+  const links = composeCars.flatMap(c=> (c.imgs&&c.imgs.length?c.imgs:[c.img]).filter(Boolean));
+  navigator.clipboard.writeText(links.join("\n")).then(toast);
+}
+function toast(){
+  const t = document.getElementById('toast');
+  t.style.display='block'; setTimeout(()=>t.style.display='none',1400);
+}
+
+// タブ制御
+document.getElementById('fuelTabs').addEventListener('click',e=>{
+  if(!e.target.dataset.fuel) return;
+  fuelFilter = e.target.dataset.fuel;
+  document.querySelectorAll('#fuelTabs .tab').forEach(t=>t.classList.toggle('on',t===e.target));
+  render();
+});
+document.getElementById('srcTabs').addEventListener('click',e=>{
+  if(!e.target.dataset.src) return;
+  srcFilter = e.target.dataset.src;
+  document.querySelectorAll('#srcTabs .tab').forEach(t=>t.classList.toggle('on',t===e.target));
+  render();
+});
+['rate','freight','gst'].forEach(id=>document.getElementById(id).addEventListener('input',()=>{ saveMarketVals(); render(); }));
+
+// 仕向け国・営業文パターンのプルダウンを構築して初期化
+(function(){
+  const sel = document.getElementById('market');
+  sel.innerHTML = Object.entries(MARKETS).map(([k,m])=>`<option value="${k}" ${k===curMarket?'selected':''}>${m.label}</option>`).join("");
+  applyMarketUI();
+  const ps = document.getElementById('ptn');
+  ps.innerHTML = PATTERNS.map((p,i)=>`<option value="${i}" ${i===curPattern?'selected':''}>${p.name}</option>`).join("");
+})();
+document.getElementById('modal').addEventListener('click',e=>{ if(e.target.id==='modal') closeModal(); });
+
+// ヘッダー情報
+function updateMeta(){
+  const c = INV.counts||{};
+  const cars = INV.cars.map(eff);
+  const hv = cars.filter(x=>x.fuel==="Hybrid").length;
+  const pt = cars.filter(x=>x.fuel==="Petrol").length;
+  const dl = cars.filter(x=>x.fuel==="Diesel").length;
+  const ovrN = Object.keys(OVR).length;
+  let stale = "";
+  const upd = new Date((INV.updated||"").replace(" ","T"));
+  if(!isNaN(upd) && (Date.now()-upd.getTime()) > 26*3600*1000){
+    stale = " ｜ ⚠️ データが1日以上古いです — 「更新して開く.bat」を実行してください";
+  }
+  document.getElementById('meta').textContent =
+    `最終更新: ${INV.updated} ｜ 合計 ${cars.length}台（EXSEA ${c["EXSEA"]||0} / NILE ${c["NILE"]||0} / Trade-in ${c["NILE-TradeIn"]||0} / ATM ${c["ATM"]||0}）｜ ⚡HV ${hv}台・⛽ガソリン ${pt}台・🛢ディーゼル ${dl}台${ovrN?` ｜ ✏️手動修正 ${ovrN}台`:''}${stale} ｜ Sold車は自動除外・毎朝7:30自動更新`;
+}
+const _render = render;
+render = function(){ _render(); updateMeta(); };
+render();
+</script>
+</body>
+</html>
