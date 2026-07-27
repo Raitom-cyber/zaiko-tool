@@ -1,10 +1,10 @@
 window.INVENTORY = {
- "updated": "2026-07-23 14:57",
+ "updated": "2026-07-24 09:40",
  "counts": {
   "EXSEA": 21,
   "NILE": 12,
   "NILE-TradeIn": 0,
-  "ATM": 254
+  "ATM": 244
  },
  "cars": [
   {
@@ -2229,24 +2229,6 @@ window.INVENTORY = {
   },
   {
    "source": "ATM",
-   "name": "TOYOTA VOXY HV V",
-   "grade": "",
-   "year": "2016",
-   "km": "81,599",
-   "fob_jpy": 1502256,
-   "fob_usd": 10015,
-   "link": "https://atm-international.co.jp/products/toyota-voxy-hv-v-ch0000061445",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_55a6b15b-1c73-4911-a1bc-8cce23d73714.jpg?v=1781501498",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_55a6b15b-1c73-4911-a1bc-8cce23d73714.jpg?v=1781501498",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_c60d90c4-15f9-43c4-873d-f3db38d79ac0.jpg?v=1781501497",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_4_60df4aa0-bc72-4cea-b165-830b841fd739.jpg?v=1781501498"
-   ],
-   "fuel": "Hybrid",
-   "ref": "CH0000061445"
-  },
-  {
-   "source": "ATM",
    "name": "SUZUKI ALTO LAPIN G",
    "grade": "",
    "year": "2023",
@@ -3093,24 +3075,6 @@ window.INVENTORY = {
   },
   {
    "source": "ATM",
-   "name": "MAZDA CAROL GL Safe Support",
-   "grade": "",
-   "year": "2023",
-   "km": "6,788",
-   "fob_jpy": 665580,
-   "fob_usd": 4437,
-   "link": "https://atm-international.co.jp/products/mazda-carol-gl-safe-support-ch0000060875",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_628371b0-263d-43fa-baf5-f1c9cfec9a63.jpg?v=1781163702",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_628371b0-263d-43fa-baf5-f1c9cfec9a63.jpg?v=1781163702",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_b0223710-f10a-40b7-bb0c-54a25234ba4b.jpg?v=1781163702",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_8_df626518-5269-4c18-9e2e-0841b49ff6a1.jpg?v=1781163702"
-   ],
-   "fuel": "Petrol",
-   "ref": "CH0000060875"
-  },
-  {
-   "source": "ATM",
    "name": "TOYOTA NOAH Si W×B3",
    "grade": "",
    "year": "2021",
@@ -3237,24 +3201,6 @@ window.INVENTORY = {
   },
   {
    "source": "ATM",
-   "name": "HONDA FIT G L HondaSENSING",
-   "grade": "",
-   "year": "2018",
-   "km": "35,711",
-   "fob_jpy": 759590,
-   "fob_usd": 5064,
-   "link": "https://atm-international.co.jp/products/honda-fit-g-l-hondasensing-ch0000059423",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_fcfeb6a0-86f6-4161-b0f8-68e7fa53cdfe.jpg?v=1780019570",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_fcfeb6a0-86f6-4161-b0f8-68e7fa53cdfe.jpg?v=1780019570",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_d4e58859-49bc-40ee-a47b-61bb2b551420.jpg?v=1780019570",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_10_4c02a534-9aeb-4b77-9f66-aa9130932be5.jpg?v=1780019570"
-   ],
-   "fuel": "Petrol",
-   "ref": "CH0000059423"
-  },
-  {
-   "source": "ATM",
    "name": "HONDA FIT G F HondaSENSING",
    "grade": "",
    "year": "2019",
@@ -3345,24 +3291,6 @@ window.INVENTORY = {
   },
   {
    "source": "ATM",
-   "name": "SUZUKI SPACIA CUSTOM Hybrid XS",
-   "grade": "",
-   "year": "2025",
-   "km": "5,784",
-   "fob_jpy": 1549260,
-   "fob_usd": 10328,
-   "link": "https://atm-international.co.jp/products/suzuki-spacia-custom-hybrid-xs-ch0000053146",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_b5284652-9664-4c10-84bf-95714d8a9412.jpg?v=1780017121",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_b5284652-9664-4c10-84bf-95714d8a9412.jpg?v=1780017121",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_3ef3e1f5-bba0-4b07-a6d6-0e0b7ceee9e6.jpg?v=1780017121",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_8_ae64ea03-fc47-4edf-9d11-9058c6df8a0d.jpg?v=1780017121"
-   ],
-   "fuel": "Hybrid",
-   "ref": "CH0000053146"
-  },
-  {
-   "source": "ATM",
    "name": "SUZUKI SPACIA Hybrid X",
    "grade": "",
    "year": "2025",
@@ -3414,42 +3342,6 @@ window.INVENTORY = {
    ],
    "fuel": "Hybrid",
    "ref": "CH0000052773"
-  },
-  {
-   "source": "ATM",
-   "name": "DAIHATSU TAFT G Dark Chrome Venture",
-   "grade": "",
-   "year": "2025",
-   "km": "5,625",
-   "fob_jpy": 1276635,
-   "fob_usd": 8511,
-   "link": "https://atm-international.co.jp/products/daihatsu-taft-g-dark-chrome-venture-ch0000052586",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_d0188ec7-1ce2-44a3-a545-2d7787a19e3e.jpg?v=1780014709",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_d0188ec7-1ce2-44a3-a545-2d7787a19e3e.jpg?v=1780014709",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_8_b9bd6127-ae8b-4255-94e5-1b988dc7ad80.jpg?v=1780014709",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_13_f0b36d58-80bc-4567-987d-b9739d3877f7.jpg?v=1780014709"
-   ],
-   "fuel": "Petrol",
-   "ref": "CH0000052586"
-  },
-  {
-   "source": "ATM",
-   "name": "TOYOTA ALPHARD HYBRID G F Package",
-   "grade": "",
-   "year": "2023",
-   "km": "20,344",
-   "fob_jpy": 4284909,
-   "fob_usd": 28566,
-   "link": "https://atm-international.co.jp/products/toyota-alphard-hybrid-g-f-package-ch0000042181",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_b83666ac-479f-4f56-b077-e757d16d2b03.jpg?v=1780014046",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_b83666ac-479f-4f56-b077-e757d16d2b03.jpg?v=1780014046",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_badf02c2-6f0b-4eaa-84b5-35de67395b1e.jpg?v=1780014046",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_e1d96032-7bdb-4ab4-9b3e-985cf3243590.jpg?v=1780014046"
-   ],
-   "fuel": "Hybrid",
-   "ref": "CH0000042181"
   },
   {
    "source": "ATM",
@@ -3831,24 +3723,6 @@ window.INVENTORY = {
   },
   {
    "source": "ATM",
-   "name": "HONDA N BOX CUSTOM Coordinate Style",
-   "grade": "",
-   "year": "2025",
-   "km": "12",
-   "fob_jpy": 1657500,
-   "fob_usd": 11050,
-   "link": "https://atm-international.co.jp/products/honda-n-box-custom-coordinate-style-ch0000057422",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_7f50c8ed-3b8b-4e5a-9d45-4a4892be8652.jpg?v=1777536022",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_7f50c8ed-3b8b-4e5a-9d45-4a4892be8652.jpg?v=1777536022",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_4_ba68ad16-d246-4de9-beca-4306700f2267.jpg?v=1777536022",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_5_f38a3917-0077-4d71-bd38-7434f1171111.jpg?v=1777536021"
-   ],
-   "fuel": "Petrol",
-   "ref": "CH0000057422"
-  },
-  {
-   "source": "ATM",
    "name": "MITSUBISHI EK WAGON M",
    "grade": "",
    "year": "2024",
@@ -3885,24 +3759,6 @@ window.INVENTORY = {
   },
   {
    "source": "ATM",
-   "name": "SUZUKI SPACIA GEAR HV XZ Turbo",
-   "grade": "",
-   "year": "2022",
-   "km": "21,553",
-   "fob_jpy": 1477338,
-   "fob_usd": 9849,
-   "link": "https://atm-international.co.jp/products/suzuki-spacia-gear-hv-xz-turbo-ch0000057604",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_53852682-e767-4d88-afcd-c0e207e8ab78.jpg?v=1777533468",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_53852682-e767-4d88-afcd-c0e207e8ab78.jpg?v=1777533468",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_35b134ef-00c4-4964-8bbb-66c297dc449e.jpg?v=1777533468",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_32_b6c0c3cd-9922-4eda-b03b-0e51f1764355.jpg?v=1777533468"
-   ],
-   "fuel": "Hybrid",
-   "ref": "CH0000057604"
-  },
-  {
-   "source": "ATM",
    "name": "SUBARU LEVORG GT-H EX",
    "grade": "",
    "year": "2021",
@@ -3918,24 +3774,6 @@ window.INVENTORY = {
    ],
    "fuel": "Petrol",
    "ref": "CH0000057643"
-  },
-  {
-   "source": "ATM",
-   "name": "DAIHATSU MIRA TOCOT L SA3",
-   "grade": "",
-   "year": "2023",
-   "km": "6,666",
-   "fob_jpy": 898918,
-   "fob_usd": 5993,
-   "link": "https://atm-international.co.jp/products/daihatsu-mira-tocot-l-sa3-ch0000057717",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_9094ce20-9720-4c36-bcc2-7867a17b2979.jpg?v=1777533013",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_9094ce20-9720-4c36-bcc2-7867a17b2979.jpg?v=1777533013",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_e1703344-bbf2-4bd4-8768-f3312631033c.jpg?v=1777533013",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_8_f9afd17a-fcca-440c-bba7-d1c5ccbc791c.jpg?v=1777533013"
-   ],
-   "fuel": "Petrol",
-   "ref": "CH0000057717"
   },
   {
    "source": "ATM",
@@ -4998,24 +4836,6 @@ window.INVENTORY = {
    ],
    "fuel": "Petrol",
    "ref": "CH0000059647"
-  },
-  {
-   "source": "ATM",
-   "name": "NISSAN DAYZ X",
-   "grade": "",
-   "year": "2021",
-   "km": "10,951",
-   "fob_jpy": 804096,
-   "fob_usd": 5361,
-   "link": "https://atm-international.co.jp/products/nissan-dayz-x-ch0000059645",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_7000c46c-1e09-4303-86c3-58c6782616f9.jpg?v=1776737428",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_7000c46c-1e09-4303-86c3-58c6782616f9.jpg?v=1776737428",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_5f2e16c4-83cc-43f4-934f-d74ca45c8585.jpg?v=1776737428",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_8_ffcb8887-0f64-41d9-ac1a-996a016da8fb.jpg?v=1776737428"
-   ],
-   "fuel": "Petrol",
-   "ref": "CH0000059645"
   },
   {
    "source": "ATM",
