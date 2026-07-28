@@ -69,6 +69,8 @@
   .card img{width:100%;height:100%;object-fit:cover;display:block}
   .card .noimg{display:flex;align-items:center;justify-content:center;height:100%;color:var(--sub);font-size:13px}
   .fuelbadge{position:absolute;top:8px;left:8px;font-size:11px;font-weight:700;padding:3px 10px;border-radius:10px;color:#08101e}
+  .hotbadge{position:absolute;top:36px;left:8px;font-size:11px;font-weight:800;padding:3px 10px;border-radius:10px;background:linear-gradient(90deg,var(--gold),#f59e0b);color:#08101e;box-shadow:0 2px 8px rgba(251,191,36,.4)}
+  .card.hot{border-color:var(--gold)}
   .fuelbadge.Hybrid{background:var(--hybrid)} .fuelbadge.Petrol{background:var(--petrol)}
   .fuelbadge.Diesel{background:var(--diesel)} .fuelbadge.Other{background:#64748b;color:#fff}
   .srcbadge{position:absolute;top:8px;right:8px;font-size:10px;padding:3px 8px;border-radius:10px;background:rgba(0,0,0,.65);color:#fff;border:1px solid rgba(255,255,255,.25)}
@@ -131,6 +133,7 @@
     <button class="tab fuel-Hybrid" data-fuel="Hybrid">⚡ ハイブリッド</button>
     <button class="tab fuel-Petrol" data-fuel="Petrol">⛽ ガソリン</button>
     <button class="tab fuel-Diesel" data-fuel="Diesel">🛢 ディーゼル</button>
+    <button class="tab" id="hotTab" onclick="toggleHot()" style="border-color:var(--gold);color:var(--gold);font-weight:700">⭐ 輸出有力のみ</button>
   </div>
   <!-- 在庫元タブ -->
   <div class="filters" id="srcTabs">
@@ -292,11 +295,35 @@ function calc(car){
 function fuelIcon(f){ return f==="Hybrid"?"⚡":f==="Diesel"?"🛢":"⛽"; }
 function carKey(c){ return c.source + "|" + c.link; }
 
+// ---------- ⭐輸出有力の判定（海外で売れ筋のモデル×年式×走行×HVで採点） ----------
+const HOT_MODELS = ["aqua","prius","corolla","fielder","axio","probox","succeed","hiace","harrier","rav4","forester","alphard","vellfire","vitz","yaris","fit","note","vezel","demio","mazda2","cx-5","cx5","swift","d-max","dmax","land cruiser","prado","hijet","carry","every","jimny","sienta","freed","noah","voxy","serena","x-trail","dualis","impreza","c-hr","delica"];
+let hotFilter = false;
+function exportHot(c){
+  const nm = (c.name+" "+(c.grade||"")).toLowerCase();
+  const yr = parseInt(c.year)||0;
+  const km = parseInt((c.km+"").replace(/,/g,""))||0;
+  let score = 0;
+  if(HOT_MODELS.some(m=>nm.includes(m))) score += 2;   // 海外実需のあるモデル
+  if(c.fuel==="Hybrid") score += 1;                     // 燃費重視市場に強い
+  if(yr>=2017) score += 1;                              // 年式規制のある国にも出せる
+  if(km && km<100000) score += 1;                       // 10万km未満
+  return score>=3;
+}
+function toggleHot(){
+  hotFilter = !hotFilter;
+  const b = document.getElementById('hotTab');
+  b.classList.toggle('on', hotFilter);
+  b.style.background = hotFilter ? 'var(--gold)' : '';
+  b.style.color = hotFilter ? '#08101e' : 'var(--gold)';
+  render();
+}
+
 function visibleCars(){
   const q = document.getElementById('q').value.trim().toLowerCase();
   let list = INV.cars.map(eff).filter(c =>
     (fuelFilter==="ALL" || c.fuel===fuelFilter) &&
     (srcFilter==="ALL" || c.source===srcFilter) &&
+    (!hotFilter || exportHot(c)) &&
     (!q || (c.name+" "+c.year+" "+c.grade).toLowerCase().includes(q))
   );
   const s = document.getElementById('sort').value;
@@ -338,10 +365,11 @@ function render(){
           <button class="btn wa" onclick="quickSend('${ek}','wa')">WhatsApp</button>
           <button class="btn mail" onclick="quickSend('${ek}','mail')">メール</button>
         </div>`;
-    return `<div class="card ${sel?'sel':''}" data-k="${ek}">
+    return `<div class="card ${sel?'sel':''} ${exportHot(c)?'hot':''}" data-k="${ek}">
       <div class="imgbox" onclick="window.open('${c.link}','_blank')">
         ${c.img?`<img src="${c.img}" loading="lazy" onerror="this.outerHTML='<div class=noimg>NO PHOTO</div>'">`:`<div class="noimg">NO PHOTO</div>`}
         <span class="fuelbadge ${c.fuel||'Other'}">${fuelIcon(c.fuel)} ${c.fuel||'?'}</span>
+        ${exportHot(c)?`<span class="hotbadge">⭐ 輸出有力</span>`:''}
         <span class="srcbadge">${c.source}</span>
         ${hasOvr?`<span class="ovrbadge">✏️ 修正済</span>`:''}
         <input type="checkbox" class="ck" ${sel?'checked':''} onclick="event.stopPropagation();toggleSel('${ek}')">
@@ -635,8 +663,9 @@ function updateMeta(){
   if(!isNaN(upd) && (Date.now()-upd.getTime()) > 26*3600*1000){
     stale = " ｜ ⚠️ データが1日以上古いです — 「更新して開く.bat」を実行してください";
   }
+  const hot = cars.filter(exportHot).length;
   document.getElementById('meta').textContent =
-    `最終更新: ${INV.updated} ｜ 合計 ${cars.length}台（EXSEA ${c["EXSEA"]||0} / NILE ${c["NILE"]||0} / Trade-in ${c["NILE-TradeIn"]||0} / ATM ${c["ATM"]||0}）｜ ⚡HV ${hv}台・⛽ガソリン ${pt}台・🛢ディーゼル ${dl}台${ovrN?` ｜ ✏️手動修正 ${ovrN}台`:''}${stale} ｜ Sold車は自動除外・毎朝7:30自動更新`;
+    `最終更新: ${INV.updated} ｜ 合計 ${cars.length}台（EXSEA ${c["EXSEA"]||0} / NILE ${c["NILE"]||0} / Trade-in ${c["NILE-TradeIn"]||0} / ATM ${c["ATM"]||0}）｜ ⭐輸出有力 ${hot}台 ｜ ⚡HV ${hv}台・⛽ガソリン ${pt}台・🛢ディーゼル ${dl}台${ovrN?` ｜ ✏️手動修正 ${ovrN}台`:''}${stale} ｜ Sold車は自動除外・毎朝7:30自動更新`;
 }
 const _render = render;
 render = function(){ _render(); updateMeta(); };
