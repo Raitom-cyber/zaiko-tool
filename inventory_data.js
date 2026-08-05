@@ -1,10 +1,10 @@
 window.INVENTORY = {
- "updated": "2026-07-29 13:10",
+ "updated": "2026-08-04 11:11",
  "counts": {
   "EXSEA": 22,
   "NILE": 12,
   "NILE-TradeIn": 0,
-  "ATM": 258
+  "ATM": 297
  },
  "cars": [
   {
@@ -85,8 +85,8 @@ window.INVENTORY = {
    "grade": "RS",
    "year": "1996",
    "km": "90235",
-   "fob_jpy": 0,
-   "fob_usd": 0,
+   "fob_jpy": 700000,
+   "fob_usd": 4459,
    "link": "https://exsea.jp/auto_listing/bd5-020883-subaru-legacy/",
    "img": "https://exsea.jp/wp-content/uploads/2026/05/BD5-1-1.jpg",
    "imgs": [
@@ -606,6 +606,708 @@ window.INVENTORY = {
    "fuel": "Petrol",
    "ref": "R35-030278",
    "id": "1000021833"
+  },
+  {
+   "source": "ATM",
+   "name": "TOYOTA C-HR Hybrid G Mode Nero Safe Plus2",
+   "grade": "",
+   "year": "2021",
+   "km": "21,705",
+   "fob_jpy": 2112520,
+   "fob_usd": 14083,
+   "link": "https://atm-international.co.jp/products/toyota-c-hr-hybrid-g-mode-nero-safe-plus2-ch0000062488",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_8efef2c3-6329-442d-aa92-7fa66cf8fd30.jpg?v=1785398937",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_8efef2c3-6329-442d-aa92-7fa66cf8fd30.jpg?v=1785398937",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_1b3a9c5b-9106-418f-a253-34a8be2c5ed2.jpg?v=1785398937",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_8d469920-7583-4011-8707-4808495d4a8b.jpg?v=1785398937"
+   ],
+   "fuel": "Hybrid",
+   "ref": "CH0000062488"
+  },
+  {
+   "source": "ATM",
+   "name": "NISSAN ROOX X",
+   "grade": "",
+   "year": "2024",
+   "km": "16,209",
+   "fob_jpy": 1143051,
+   "fob_usd": 7620,
+   "link": "https://atm-international.co.jp/products/nissan-roox-x-ch0000062423",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_7454fc10-1750-4ced-a278-c7f7307d5b84.jpg?v=1785398743",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_7454fc10-1750-4ced-a278-c7f7307d5b84.jpg?v=1785398743",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_046add2d-4581-4617-bb75-0b3801d691cd.jpg?v=1785398743",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_379e6afd-2fdb-47e8-88a3-e399ecc30c93.jpg?v=1785398743"
+   ],
+   "fuel": "Petrol",
+   "ref": "CH0000062423"
+  },
+  {
+   "source": "ATM",
+   "name": "MAZDA MAZDA 2 S",
+   "grade": "",
+   "year": "2020",
+   "km": "18,847",
+   "fob_jpy": 976856,
+   "fob_usd": 6512,
+   "link": "https://atm-international.co.jp/products/mazda-mazda-2-s-ch0000062397",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_8fdc89fd-442b-47ea-b229-dba1eb386829.jpg?v=1785398566",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_8fdc89fd-442b-47ea-b229-dba1eb386829.jpg?v=1785398566",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_4e12050b-54d3-4f93-90d7-f32377756b96.jpg?v=1785398566",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_7935fd18-5194-4b38-8ecf-2d543da3711b.jpg?v=1785398566"
+   ],
+   "fuel": "Petrol",
+   "ref": "CH0000062397"
+  },
+  {
+   "source": "ATM",
+   "name": "NISSAN DAYZ Highway Star X",
+   "grade": "",
+   "year": "2022",
+   "km": "10,697",
+   "fob_jpy": 764496,
+   "fob_usd": 5097,
+   "link": "https://atm-international.co.jp/products/nissan-dayz-highway-star-x-ch0000062388",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_6df53ef2-fce0-469a-872d-aa11e7e48e1f.jpg?v=1785398453",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_6df53ef2-fce0-469a-872d-aa11e7e48e1f.jpg?v=1785398453",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_4ea4c028-c9d1-4d47-94d2-9b1d2990c3af.jpg?v=1785398453",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_3c6ba3e0-0abd-4009-9458-94c4fc803e10.jpg?v=1785398453"
+   ],
+   "fuel": "Hybrid",
+   "ref": "CH0000062388"
+  },
+  {
+   "source": "ATM",
+   "name": "HONDA CIVIC TYPE R Racing Black Package",
+   "grade": "",
+   "year": "2026",
+   "km": "127",
+   "fob_jpy": 5039394,
+   "fob_usd": 33596,
+   "link": "https://atm-international.co.jp/products/honda-civic-type-r-racing-black-package-ch0000062370",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_327c75a1-478d-466e-8831-3e74806ed7d9.jpg?v=1785398218",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_327c75a1-478d-466e-8831-3e74806ed7d9.jpg?v=1785398218",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_d3f04b1b-361f-4ede-b1cd-dbae818dc6a7.jpg?v=1785398218",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_90ae04b0-b300-43bb-aea5-5ce0f61ef11a.jpg?v=1785398218"
+   ],
+   "fuel": "Petrol",
+   "ref": "CH0000062370"
+  },
+  {
+   "source": "ATM",
+   "name": "HONDA N-ONE Premium",
+   "grade": "",
+   "year": "2023",
+   "km": "18,545",
+   "fob_jpy": 1198449,
+   "fob_usd": 7990,
+   "link": "https://atm-international.co.jp/products/honda-n-one-premium-ch0000062361",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_38c4fc61-77ce-4240-8e5b-b693a3d51db8.jpg?v=1785398061",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_38c4fc61-77ce-4240-8e5b-b693a3d51db8.jpg?v=1785398061",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_06487db9-5cbe-4b49-bd73-b49ab1b3c2e9.jpg?v=1785398061",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_44f8147a-9adf-45e6-a3b7-9263e2dd5925.jpg?v=1785398061"
+   ],
+   "fuel": "Petrol",
+   "ref": "CH0000062361"
+  },
+  {
+   "source": "ATM",
+   "name": "TOYOTA PASSO X G Package",
+   "grade": "",
+   "year": "2020",
+   "km": "46,314",
+   "fob_jpy": 746030,
+   "fob_usd": 4974,
+   "link": "https://atm-international.co.jp/products/toyota-passo-x-g-package-ch0000062359",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_af4c9bff-44a7-4f40-8a38-3f4212cf6004.jpg?v=1785397924",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_af4c9bff-44a7-4f40-8a38-3f4212cf6004.jpg?v=1785397924",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_8_12366e21-8f77-41f6-b0e1-379f20800fb2.jpg?v=1785397924",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_21_629c30e8-0c45-4a0c-8653-8194fd86f656.jpg?v=1785397925"
+   ],
+   "fuel": "Petrol",
+   "ref": "CH0000062359"
+  },
+  {
+   "source": "ATM",
+   "name": "TOYOTA YARIS CROSS Hybrid U",
+   "grade": "",
+   "year": "2024",
+   "km": "26,299",
+   "fob_jpy": 1964792,
+   "fob_usd": 13099,
+   "link": "https://atm-international.co.jp/products/toyota-yaris-cross-hybrid-u-ch0000062352",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_d5e5baa2-3472-49c2-8540-a173639b9264.jpg?v=1785397752",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_d5e5baa2-3472-49c2-8540-a173639b9264.jpg?v=1785397752",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_3a5781d1-3bad-4671-a73e-ed8e265002e7.jpg?v=1785397752",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_9e2b2a1f-3671-44c6-921b-3e73971e4ac8.jpg?v=1785397752"
+   ],
+   "fuel": "Hybrid",
+   "ref": "CH0000062352"
+  },
+  {
+   "source": "ATM",
+   "name": "TOYOTA ROOMY G",
+   "grade": "",
+   "year": "2022",
+   "km": "34,258",
+   "fob_jpy": 1290780,
+   "fob_usd": 8605,
+   "link": "https://atm-international.co.jp/products/toyota-roomy-g-ch0000062351",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_28bed523-f32f-4013-9fb1-0ccaa717f59d.jpg?v=1785397601",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_28bed523-f32f-4013-9fb1-0ccaa717f59d.jpg?v=1785397601",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_75225787-3367-40d6-98c4-d84797d3bcea.jpg?v=1785397601",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_5df8c552-400f-43ae-a7f0-5f97db289139.jpg?v=1785397601"
+   ],
+   "fuel": "Petrol",
+   "ref": "CH0000062351"
+  },
+  {
+   "source": "ATM",
+   "name": "DAIHATSU BOON X SA3",
+   "grade": "",
+   "year": "2021",
+   "km": "24,754",
+   "fob_jpy": 496737,
+   "fob_usd": 3312,
+   "link": "https://atm-international.co.jp/products/daihatsu-boon-x-sa3-ch0000062347",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_28356331-2613-414f-840c-0d13a53b003a.jpg?v=1785397464",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_28356331-2613-414f-840c-0d13a53b003a.jpg?v=1785397464",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_9_3e8ee072-55c6-4400-99f6-730aa6ff4781.jpg?v=1785397464",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_84e8ae4f-770f-4c62-850d-045a596c16f4.jpg?v=1785397464"
+   ],
+   "fuel": "Petrol",
+   "ref": "CH0000062347"
+  },
+  {
+   "source": "ATM",
+   "name": "DAIHATSU MOVE L SA3",
+   "grade": "",
+   "year": "2020",
+   "km": "22,017",
+   "fob_jpy": 552136,
+   "fob_usd": 3681,
+   "link": "https://atm-international.co.jp/products/daihatsu-move-l-sa3-ch0000062346",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_6381bc32-5f80-4e87-8faa-c180d5fba5a8.jpg?v=1785396777",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_6381bc32-5f80-4e87-8faa-c180d5fba5a8.jpg?v=1785396777",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_10_8af070e5-bcc6-4540-a782-db7aae2fc1dc.jpg?v=1785396777",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_17e1ecb6-11f9-4e8d-95bf-8c77e97efe20.jpg?v=1785396777"
+   ],
+   "fuel": "Petrol",
+   "ref": "CH0000062346"
+  },
+  {
+   "source": "ATM",
+   "name": "SUZUKI WAGON R SMILE G",
+   "grade": "",
+   "year": "2018",
+   "km": "54,167",
+   "fob_jpy": 459806,
+   "fob_usd": 3065,
+   "link": "https://atm-international.co.jp/products/suzuki-wagon-r-smile-g-ch0000062321",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_0b2c8576-be4f-42b6-9589-1daad13927fd.jpg?v=1785396594",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_0b2c8576-be4f-42b6-9589-1daad13927fd.jpg?v=1785396594",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_7251f106-7123-4b5a-af82-f3d0c47ff287.jpg?v=1785396595",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_89128189-ca35-44c0-bd20-ff86582fda31.jpg?v=1785396594"
+   ],
+   "fuel": "Hybrid",
+   "ref": "CH0000062321"
+  },
+  {
+   "source": "ATM",
+   "name": "TOYOTA RAV4 Hybrid G",
+   "grade": "",
+   "year": "2020",
+   "km": "59,819",
+   "fob_jpy": 2398744,
+   "fob_usd": 15992,
+   "link": "https://atm-international.co.jp/products/toyota-rav4-hybrid-g-ch0000062299",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_446e6777-4c23-497f-955f-1abbb7cf15d0.jpg?v=1785396365",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_446e6777-4c23-497f-955f-1abbb7cf15d0.jpg?v=1785396365",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_7_2100d04f-fd07-4c34-a301-47d26ea25fd8.jpg?v=1785396365",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_8_33e8a6ae-642a-4f54-aa50-f63d5e8c276c.jpg?v=1785396365"
+   ],
+   "fuel": "Hybrid",
+   "ref": "CH0000062299"
+  },
+  {
+   "source": "ATM",
+   "name": "SUZUKI SPACIA GEAR Hybrid XZ",
+   "grade": "",
+   "year": "2024",
+   "km": "7,232",
+   "fob_jpy": 1567770,
+   "fob_usd": 10452,
+   "link": "https://atm-international.co.jp/products/suzuki-spacia-gear-hybrid-xz-ch0000062288",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_5c6b4117-b72c-4dc8-95c8-0278ff7941c7.jpg?v=1785395990",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_5c6b4117-b72c-4dc8-95c8-0278ff7941c7.jpg?v=1785395990",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_19fe9693-b9d9-4bab-bbb0-9ff7a35ce626.jpg?v=1785395989",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_a5103e34-3cbd-4c2a-9abd-9f6b3d7b9734.jpg?v=1785395989"
+   ],
+   "fuel": "Hybrid",
+   "ref": "CH0000062288"
+  },
+  {
+   "source": "ATM",
+   "name": "TOYOTA YARIS CROSS Hybrid Z",
+   "grade": "",
+   "year": "2024",
+   "km": "5,914",
+   "fob_jpy": 2426444,
+   "fob_usd": 16176,
+   "link": "https://atm-international.co.jp/products/toyota-yaris-cross-hybrid-z-ch0000062286",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2928bf5f-3648-4d3a-8792-7200ea03a89f.jpg?v=1785395786",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2928bf5f-3648-4d3a-8792-7200ea03a89f.jpg?v=1785395786",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_31_6b0869dd-5536-4b55-8fc3-a33f429eee90.jpg?v=1785395786",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_01c30d17-2a85-4154-b105-606198952038.jpg?v=1785395786"
+   ],
+   "fuel": "Hybrid",
+   "ref": "CH0000062286"
+  },
+  {
+   "source": "ATM",
+   "name": "DAIHATSU HIJET CARGO Deck Van G",
+   "grade": "",
+   "year": "2022",
+   "km": "9,698",
+   "fob_jpy": 1198449,
+   "fob_usd": 7990,
+   "link": "https://atm-international.co.jp/products/daihatsu-hijet-cargo-deck-van-g-ch0000062281",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_1a96b967-25bf-4e22-add3-18135ec45deb.jpg?v=1785395569",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_1a96b967-25bf-4e22-add3-18135ec45deb.jpg?v=1785395569",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_1a68b074-edc4-4c40-b088-2ad664492444.jpg?v=1785395569",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_10_1213ea03-66e4-4ad3-9c01-c3ce68fadb12.jpg?v=1785395569"
+   ],
+   "fuel": "Petrol",
+   "ref": "CH0000062281"
+  },
+  {
+   "source": "ATM",
+   "name": "TOYOTA HARRIER HYBRID Z Leather Package",
+   "grade": "",
+   "year": "2022",
+   "km": "19,686",
+   "fob_jpy": 3091222,
+   "fob_usd": 20608,
+   "link": "https://atm-international.co.jp/products/toyota-harrier-hybrid-z-leather-package-ch0000062279",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2121f965-2e14-4f35-aba8-cd04dbc610d1.jpg?v=1785394706",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2121f965-2e14-4f35-aba8-cd04dbc610d1.jpg?v=1785394706",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_741b5ef5-cf49-4430-9b3b-be30e6a918bd.jpg?v=1785394706",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_4_a7b6c220-16f5-4324-88a3-d107acb96196.jpg?v=1785394706"
+   ],
+   "fuel": "Hybrid",
+   "ref": "CH0000062279"
+  },
+  {
+   "source": "ATM",
+   "name": "MAZDA MAZDA 2 BD i Selection",
+   "grade": "",
+   "year": "2025",
+   "km": "5,063",
+   "fob_jpy": 1475440,
+   "fob_usd": 9836,
+   "link": "https://atm-international.co.jp/products/mazda-mazda-2-bd-i-selection-ch0000062277",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3453af6d-f3e6-4ab7-b69a-098741a20ee5.jpg?v=1785394606",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3453af6d-f3e6-4ab7-b69a-098741a20ee5.jpg?v=1785394606",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_b5f5c17e-7a4e-479a-82a8-97bf5b41b05a.jpg?v=1785394606",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_10_054b277c-c044-4632-a9cf-a287e87a00c9.jpg?v=1785394606"
+   ],
+   "fuel": "Petrol",
+   "ref": "CH0000062277"
+  },
+  {
+   "source": "ATM",
+   "name": "TOYOTA HARRIER G",
+   "grade": "",
+   "year": "2023",
+   "km": "4,836",
+   "fob_jpy": 2721901,
+   "fob_usd": 18146,
+   "link": "https://atm-international.co.jp/products/toyota-harrier-g-ch0000062273",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_9bae2e0c-99fa-40ae-a418-f59c860fbf53.jpg?v=1785394317",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_9bae2e0c-99fa-40ae-a418-f59c860fbf53.jpg?v=1785394317",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_8424b13c-352e-418c-b0c7-bfee7b9909c1.jpg?v=1785394317",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_184fb82f-a702-4302-93d6-08998db5d3b0.jpg?v=1785394317"
+   ],
+   "fuel": "Petrol",
+   "ref": "CH0000062273"
+  },
+  {
+   "source": "ATM",
+   "name": "LEXUS UX HYBRID Version L",
+   "grade": "",
+   "year": "2020",
+   "km": "27,342",
+   "fob_jpy": 2574172,
+   "fob_usd": 17161,
+   "link": "https://atm-international.co.jp/products/lexus-ux-hybrid-version-l-ch0000062259",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_060b4954-7aa9-4b4e-b5b1-b2341e4b83cf.jpg?v=1785393943",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_060b4954-7aa9-4b4e-b5b1-b2341e4b83cf.jpg?v=1785393943",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_dc45f069-5fbd-444e-bbbe-01d96d612a19.jpg?v=1785393943",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_31_66de8e04-cd39-43b4-8c7f-c5939607c88d.jpg?v=1785393943"
+   ],
+   "fuel": "Hybrid",
+   "ref": "CH0000062259"
+  },
+  {
+   "source": "ATM",
+   "name": "TOYOTA HARRIER HYBRID Z Leather Package",
+   "grade": "",
+   "year": "2024",
+   "km": "29,848",
+   "fob_jpy": 3377446,
+   "fob_usd": 22516,
+   "link": "https://atm-international.co.jp/products/toyota-harrier-hybrid-z-leather-package-ch0000062255",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_f85a3e35-c4fd-4caa-95a2-7e46878141a7.jpg?v=1785393737",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_f85a3e35-c4fd-4caa-95a2-7e46878141a7.jpg?v=1785393737",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_4041ebf7-92d9-40a7-ba2f-0aded983d5e4.jpg?v=1785393737",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_364f8e1f-7147-4b24-81f9-bb576a2c0fc6.jpg?v=1785393737"
+   ],
+   "fuel": "Hybrid",
+   "ref": "CH0000062255"
+  },
+  {
+   "source": "ATM",
+   "name": "TOYOTA CROWN Hybrid RS",
+   "grade": "",
+   "year": "2019",
+   "km": "12,383",
+   "fob_jpy": 2611104,
+   "fob_usd": 17407,
+   "link": "https://atm-international.co.jp/products/toyota-crown-hybrid-rs-ch0000062254",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/WK00154136_5.jpg?v=1785393538",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/WK00154136_5.jpg?v=1785393538",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/WK00154136_7.jpg?v=1785393538",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/WK00154136_8.jpg?v=1785393538"
+   ],
+   "fuel": "Hybrid",
+   "ref": "CH0000062254"
+  },
+  {
+   "source": "ATM",
+   "name": "SUZUKI SWIFT Hybrid ML Safety Package",
+   "grade": "",
+   "year": "2017",
+   "km": "19,421",
+   "fob_jpy": 764496,
+   "fob_usd": 5097,
+   "link": "https://atm-international.co.jp/products/suzuki-swift-hybrid-ml-safety-package-ch0000062253",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_4fbb90a2-c291-45bd-a21b-fe8b276d469b.jpg?v=1785393332",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_4fbb90a2-c291-45bd-a21b-fe8b276d469b.jpg?v=1785393332",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_7939129e-9c23-40bc-9311-f6f4d5409066.jpg?v=1785393332",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_8bbda93d-f6b8-4233-ae01-0fa09b0da811.jpg?v=1785393332"
+   ],
+   "fuel": "Hybrid",
+   "ref": "CH0000062253"
+  },
+  {
+   "source": "ATM",
+   "name": "DAIHATSU BOON Silk G Package SA3",
+   "grade": "",
+   "year": "2019",
+   "km": "46,056",
+   "fob_jpy": 829126,
+   "fob_usd": 5528,
+   "link": "https://atm-international.co.jp/products/daihatsu-boon-silk-g-package-sa3-ch0000062251",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_71a9de63-a0c7-4e97-bc7a-2948a15254a8.jpg?v=1785393096",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_71a9de63-a0c7-4e97-bc7a-2948a15254a8.jpg?v=1785393096",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_f8e939b5-1c09-4c0f-b775-97cff1874f05.jpg?v=1785393095",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_f2814694-d1bc-4167-82e3-11fc85654ffc.jpg?v=1785393095"
+   ],
+   "fuel": "Petrol",
+   "ref": "CH0000062251"
+  },
+  {
+   "source": "ATM",
+   "name": "TOYOTA HIACE DX Long",
+   "grade": "",
+   "year": "2024",
+   "km": "5,233",
+   "fob_jpy": 2574172,
+   "fob_usd": 17161,
+   "link": "https://atm-international.co.jp/products/toyota-hiace-dx-long-ch0000062250",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_419b1de2-0f59-4648-b161-fe3019101c51.jpg?v=1785392876",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_419b1de2-0f59-4648-b161-fe3019101c51.jpg?v=1785392876",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_f9697b6c-fa48-4980-943f-11493ebebd0e.jpg?v=1785392876",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_da1bfa70-bef4-4ce7-960c-b455663c549f.jpg?v=1785392875"
+   ],
+   "fuel": "Petrol",
+   "ref": "CH0000062250"
+  },
+  {
+   "source": "ATM",
+   "name": "TOYOTA TANK G Cozy Edition",
+   "grade": "",
+   "year": "2019",
+   "km": "39,614",
+   "fob_jpy": 912225,
+   "fob_usd": 6082,
+   "link": "https://atm-international.co.jp/products/toyota-tank-g-cozy-edition-ch0000062245",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_18_ae82e03d-5b08-4f12-8851-31aaf3f75650.jpg?v=1785392685",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_18_ae82e03d-5b08-4f12-8851-31aaf3f75650.jpg?v=1785392685",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_1_53eb43e2-0b69-4b78-9c9a-c3154a05dafa.jpg?v=1785392686",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_cf6e2b29-1a9e-45b1-9721-253afd6033fe.jpg?v=1785392685"
+   ],
+   "fuel": "Petrol",
+   "ref": "CH0000062245"
+  },
+  {
+   "source": "ATM",
+   "name": "MAZDA CX-5 XD Proactive",
+   "grade": "",
+   "year": "2023",
+   "km": "29,367",
+   "fob_jpy": 2121753,
+   "fob_usd": 14145,
+   "link": "https://atm-international.co.jp/products/mazda-cx-5-xd-proactive-ch0000062244",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_71abce14-290e-4bc3-9d17-3bcfb5607fa2.jpg?v=1785392490",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_71abce14-290e-4bc3-9d17-3bcfb5607fa2.jpg?v=1785392490",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_606155a1-693e-48f3-8805-3d49fca9974a.jpg?v=1785392490",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_b2284869-c217-4d27-8541-009845efd5e7.jpg?v=1785392491"
+   ],
+   "fuel": "Diesel",
+   "ref": "CH0000062244"
+  },
+  {
+   "source": "ATM",
+   "name": "TOYOTA YARIS CROSS G",
+   "grade": "",
+   "year": "2025",
+   "km": "3,004",
+   "fob_jpy": 1900160,
+   "fob_usd": 12668,
+   "link": "https://atm-international.co.jp/products/toyota-yaris-cross-g-ch0000062242",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_58232de5-2fe3-4bfe-973a-6fe5b9cc77e1.jpg?v=1785392181",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_58232de5-2fe3-4bfe-973a-6fe5b9cc77e1.jpg?v=1785392181",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_d938bd35-9054-422b-bf33-7a560b2973ac.jpg?v=1785392181",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_4456ec6d-0971-480d-9991-c8b1e87c1871.jpg?v=1785392181"
+   ],
+   "fuel": "Petrol",
+   "ref": "CH0000062242"
+  },
+  {
+   "source": "ATM",
+   "name": "MAZDA MAZDA 2 S",
+   "grade": "",
+   "year": "2020",
+   "km": "20,902",
+   "fob_jpy": 1115352,
+   "fob_usd": 7436,
+   "link": "https://atm-international.co.jp/products/mazda-mazda-2-s-ch0000062240",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_20_6484ef1a-f3f9-4a2d-bc5e-67e042c58523.jpg?v=1785391588",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_20_6484ef1a-f3f9-4a2d-bc5e-67e042c58523.jpg?v=1785391588",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_744183a7-8da1-417c-92cb-b449e3f485a9.jpg?v=1785391588",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_1_81c190c9-40a4-485a-9b9d-02bb9c5d167c.jpg?v=1785391588"
+   ],
+   "fuel": "Petrol",
+   "ref": "CH0000062240"
+  },
+  {
+   "source": "ATM",
+   "name": "MAZDA CAROL GL Safe Support",
+   "grade": "",
+   "year": "2021",
+   "km": "30,534",
+   "fob_jpy": 432106,
+   "fob_usd": 2881,
+   "link": "https://atm-international.co.jp/products/mazda-carol-gl-safe-support-ch0000062239",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_212a68f7-f217-4563-b617-5dfba64f2e69.jpg?v=1785391336",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_212a68f7-f217-4563-b617-5dfba64f2e69.jpg?v=1785391336",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_7_c351117f-90d6-4e56-a3b2-91cfce8f03a7.jpg?v=1785391336",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_10_dec47c63-774c-4fed-9341-8cd6da2eb95f.jpg?v=1785391336"
+   ],
+   "fuel": "Petrol",
+   "ref": "CH0000062239"
+  },
+  {
+   "source": "ATM",
+   "name": "DAIHATSU COPEN Robe",
+   "grade": "",
+   "year": "2024",
+   "km": "6,865",
+   "fob_jpy": 1567770,
+   "fob_usd": 10452,
+   "link": "https://atm-international.co.jp/products/daihatsu-copen-robe-ch0000062237",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_6914d7e6-d8c4-406e-a540-53c4b3c1b5fa.jpg?v=1785391059",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_6914d7e6-d8c4-406e-a540-53c4b3c1b5fa.jpg?v=1785391059",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_4f551bbd-e21e-4f11-8256-f5e5a7ff0871.jpg?v=1785391059",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_11_ec006c3f-798f-4a21-9c5c-e3d9035b532e.jpg?v=1785391059"
+   ],
+   "fuel": "Petrol",
+   "ref": "CH0000062237"
+  },
+  {
+   "source": "ATM",
+   "name": "DAIHATSU CAST STYLE X Limited SA3",
+   "grade": "",
+   "year": "2022",
+   "km": "31,539",
+   "fob_jpy": 866059,
+   "fob_usd": 5774,
+   "link": "https://atm-international.co.jp/products/daihatsu-cast-style-x-limited-sa3-ch0000062236",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_87654a60-d070-498b-9447-a4220d0b0ec9.jpg?v=1785390609",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_87654a60-d070-498b-9447-a4220d0b0ec9.jpg?v=1785390609",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_a75be351-ff2e-4373-832c-f19f9aff4731.jpg?v=1785390609",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_170ead62-60e7-4729-af35-9d7957180010.jpg?v=1785390609"
+   ],
+   "fuel": "Petrol",
+   "ref": "CH0000062236"
+  },
+  {
+   "source": "ATM",
+   "name": "HONDA S660 Modulo X",
+   "grade": "",
+   "year": "2020",
+   "km": "17,933",
+   "fob_jpy": 2795764,
+   "fob_usd": 18638,
+   "link": "https://atm-international.co.jp/products/honda-s660-modulo-x-ch0000062235",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_d01d4395-b092-4c04-8e5b-82dbc88bc44b.jpg?v=1785389754",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_d01d4395-b092-4c04-8e5b-82dbc88bc44b.jpg?v=1785389754",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_260b33e1-f222-42f5-8352-1eabe731f2a9.jpg?v=1785389754",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_a0b66fba-8800-49ab-a8ec-dd06b382aa51.jpg?v=1785389755"
+   ],
+   "fuel": "Petrol",
+   "ref": "CH0000062235"
+  },
+  {
+   "source": "ATM",
+   "name": "SUBARU CROSSTREK Premium S:HEV EX",
+   "grade": "",
+   "year": "2025",
+   "km": "14,098",
+   "fob_jpy": 2915794,
+   "fob_usd": 19439,
+   "link": "https://atm-international.co.jp/products/subaru-crosstrek-premium-s-hev-ex-ch0000062234",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_76eb0c63-c262-44a0-a109-9dc320b885a7.jpg?v=1785389454",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_76eb0c63-c262-44a0-a109-9dc320b885a7.jpg?v=1785389454",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_25cd7ee9-8245-438d-9e10-6a585c040bb5.jpg?v=1785389454",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_7_df91c759-af44-4a6f-9bef-c3bcba58bbdc.jpg?v=1785389454"
+   ],
+   "fuel": "Petrol",
+   "ref": "CH0000062234"
+  },
+  {
+   "source": "ATM",
+   "name": "SUZUKI ALTO LAPIN Hybrid X",
+   "grade": "",
+   "year": "2025",
+   "km": "1,711",
+   "fob_jpy": 1327712,
+   "fob_usd": 8851,
+   "link": "https://atm-international.co.jp/products/suzuki-alto-lapin-hybrid-x-ch0000062233",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_5297ebcb-1b9c-4be1-b89e-72fa5b71763c.jpg?v=1785389287",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_5297ebcb-1b9c-4be1-b89e-72fa5b71763c.jpg?v=1785389287",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_51ae531e-0a1a-4966-b2f1-ba4a920e8b22.jpg?v=1785389287",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_7_882a0ddb-fcd9-48bd-93ec-8e29716afa7b.jpg?v=1785389287"
+   ],
+   "fuel": "Hybrid",
+   "ref": "CH0000062233"
+  },
+  {
+   "source": "ATM",
+   "name": "NISSAN NOTE X",
+   "grade": "",
+   "year": "2017",
+   "km": "15,341",
+   "fob_jpy": 579836,
+   "fob_usd": 3866,
+   "link": "https://atm-international.co.jp/products/nissan-note-x-ch0000062232",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_0e1e62bc-dbd5-4df9-9f97-5f3f9bdb33da.jpg?v=1785389204",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_0e1e62bc-dbd5-4df9-9f97-5f3f9bdb33da.jpg?v=1785389204",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_9c487e47-bbc0-4412-a38b-142aa1fdd5ab.jpg?v=1785389204",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_4_ede75ea4-20e5-4c31-868a-231612a89b92.jpg?v=1785389204"
+   ],
+   "fuel": "Petrol",
+   "ref": "CH0000062232"
+  },
+  {
+   "source": "ATM",
+   "name": "MAZDA MAZDA 2 C For corporate use",
+   "grade": "",
+   "year": "2021",
+   "km": "47,661",
+   "fob_jpy": 875292,
+   "fob_usd": 5835,
+   "link": "https://atm-international.co.jp/products/mazda-mazda-2-c-for-corporate-use-ch0000062231",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_c27cb8b2-06e2-4e21-9742-a9968e2b71fb.jpg?v=1785388786",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_c27cb8b2-06e2-4e21-9742-a9968e2b71fb.jpg?v=1785388786",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_51e5a0f1-47b3-440c-b627-602a88f2d106.jpg?v=1785388786",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_7a84fd9c-3e4c-4750-9067-46734dff2507.jpg?v=1785388786"
+   ],
+   "fuel": "Petrol",
+   "ref": "CH0000062231"
+  },
+  {
+   "source": "ATM",
+   "name": "SUBARU IMPREZA SPORT i-L Eye Sight",
+   "grade": "",
+   "year": "2021",
+   "km": "17,850",
+   "fob_jpy": 1106118,
+   "fob_usd": 7374,
+   "link": "https://atm-international.co.jp/products/subaru-impreza-sport-i-l-eye-sight-ch0000062229",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_d24acd1d-41bb-43ca-bdee-94d5a0d4ab46.jpg?v=1785388195",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_d24acd1d-41bb-43ca-bdee-94d5a0d4ab46.jpg?v=1785388195",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_de832491-16c3-4b79-b551-60591e7a8e89.jpg?v=1785388195",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_7_cf207187-ad40-4974-a188-cd3a7214062d.jpg?v=1785388195"
+   ],
+   "fuel": "Petrol",
+   "ref": "CH0000062229"
+  },
+  {
+   "source": "ATM",
+   "name": "SUBARU FORESTER XT Eye Sight",
+   "grade": "",
+   "year": "2014",
+   "km": "62,915",
+   "fob_jpy": 829126,
+   "fob_usd": 5528,
+   "link": "https://atm-international.co.jp/products/subaru-forester-xt-eye-sight-ch0000062228",
+   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_620942be-393a-4622-b7dd-4db596dd197e.jpg?v=1785387583",
+   "imgs": [
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_620942be-393a-4622-b7dd-4db596dd197e.jpg?v=1785387583",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_51f9390d-ca57-4409-afcd-142853f55856.jpg?v=1785387583",
+    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_275f0862-db2b-442e-9df3-7762aaaa5b99.jpg?v=1785387583"
+   ],
+   "fuel": "Petrol",
+   "ref": "CH0000062228"
   },
   {
    "source": "ATM",
