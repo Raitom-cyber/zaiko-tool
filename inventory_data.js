@@ -1,8 +1,8 @@
 window.INVENTORY = {
- "updated": "2026-08-04 11:11",
+ "updated": "2026-08-05 12:37",
  "counts": {
   "EXSEA": 22,
-  "NILE": 12,
+  "NILE": 20,
   "NILE-TradeIn": 0,
   "ATM": 297
  },
@@ -402,6 +402,142 @@ window.INVENTORY = {
    ],
    "fuel": "Petrol",
    "ref": ""
+  },
+  {
+   "source": "NILE",
+   "name": "Mazda CX-3",
+   "grade": "",
+   "year": "2016",
+   "km": "93,268",
+   "fob_jpy": 860000,
+   "fob_usd": 5734,
+   "link": "https://nilecar.jp/vehicle_detail.php?v_id=1000021919",
+   "img": "https://nilecar.jp/photo/1000021919-1-thum.jpg",
+   "imgs": [
+    "https://nilecar.jp/photo/1000021919-1-thum.jpg"
+   ],
+   "fuel": "Diesel",
+   "ref": "DK5AW-109056",
+   "id": "1000021919"
+  },
+  {
+   "source": "NILE",
+   "name": "Volkswagen Polo",
+   "grade": "",
+   "year": "2017",
+   "km": "46,187",
+   "fob_jpy": 840000,
+   "fob_usd": 5600,
+   "link": "https://nilecar.jp/vehicle_detail.php?v_id=1000021918",
+   "img": "https://nilecar.jp/photo/1000021918-1-thum.jpg",
+   "imgs": [
+    "https://nilecar.jp/photo/1000021918-1-thum.jpg"
+   ],
+   "fuel": "Petrol",
+   "ref": "WVWZZZ6RZHU089794",
+   "id": "1000021918"
+  },
+  {
+   "source": "NILE",
+   "name": "Subaru Impreza Sportswagon",
+   "grade": "",
+   "year": "2017",
+   "km": "70,163",
+   "fob_jpy": 710000,
+   "fob_usd": 4734,
+   "link": "https://nilecar.jp/vehicle_detail.php?v_id=1000021917",
+   "img": "https://nilecar.jp/photo/1000021917-1-thum.jpg",
+   "imgs": [
+    "https://nilecar.jp/photo/1000021917-1-thum.jpg"
+   ],
+   "fuel": "Petrol",
+   "ref": "GT3-005958",
+   "id": "1000021917"
+  },
+  {
+   "source": "NILE",
+   "name": "Honda Civic",
+   "grade": "",
+   "year": "2018",
+   "km": "103,505",
+   "fob_jpy": 1160000,
+   "fob_usd": 7734,
+   "link": "https://nilecar.jp/vehicle_detail.php?v_id=1000021916",
+   "img": "https://nilecar.jp/photo/1000021916-1-thum.jpg",
+   "imgs": [
+    "https://nilecar.jp/photo/1000021916-1-thum.jpg"
+   ],
+   "fuel": "Petrol",
+   "ref": "FK7-1010952",
+   "id": "1000021916"
+  },
+  {
+   "source": "NILE",
+   "name": "Mazda CX-8",
+   "grade": "",
+   "year": "2018",
+   "km": "45,641",
+   "fob_jpy": 1960000,
+   "fob_usd": 13067,
+   "link": "https://nilecar.jp/vehicle_detail.php?v_id=1000021915",
+   "img": "https://nilecar.jp/photo/1000021915-1-thum.jpg",
+   "imgs": [
+    "https://nilecar.jp/photo/1000021915-1-thum.jpg"
+   ],
+   "fuel": "Diesel",
+   "ref": "KG2P-110030",
+   "id": "1000021915"
+  },
+  {
+   "source": "NILE",
+   "name": "Toyota Alphard",
+   "grade": "",
+   "year": "2012",
+   "km": "103,970",
+   "fob_jpy": 810000,
+   "fob_usd": 5400,
+   "link": "https://nilecar.jp/vehicle_detail.php?v_id=1000021914",
+   "img": "https://nilecar.jp/photo/1000021914-1-thum.jpg",
+   "imgs": [
+    "https://nilecar.jp/photo/1000021914-1-thum.jpg"
+   ],
+   "fuel": "Petrol",
+   "ref": "ANH20-8200313",
+   "id": "1000021914"
+  },
+  {
+   "source": "NILE",
+   "name": "Lexus RX",
+   "grade": "",
+   "year": "2013",
+   "km": "99,838",
+   "fob_jpy": 1560000,
+   "fob_usd": 10400,
+   "link": "https://nilecar.jp/vehicle_detail.php?v_id=1000021913",
+   "img": "https://nilecar.jp/photo/1000021913-1-thum.jpg",
+   "imgs": [
+    "https://nilecar.jp/photo/1000021913-1-thum.jpg"
+   ],
+   "fuel": "Hybrid",
+   "ref": "GYL10-2413261",
+   "id": "1000021913"
+  },
+  {
+   "source": "NILE",
+   "name": "Toyota PRIUS α",
+   "grade": "",
+   "year": "2012",
+   "km": "105,094",
+   "fob_jpy": 510000,
+   "fob_usd": 3400,
+   "link": "https://nilecar.jp/vehicle_detail.php?v_id=1000021912",
+   "img": "https://nilecar.jp/photo/1000021912-1-thum.jpg",
+   "imgs": [
+    "https://nilecar.jp/photo/1000021912-1-thum.jpg"
+   ],
+   "fuel": "Hybrid",
+   "ref": "ZVW40-3019063",
+   "id": "1000021912"
   },
   {
    "source": "NILE",
