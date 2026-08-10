@@ -1,10 +1,10 @@
 window.INVENTORY = {
- "updated": "2026-08-05 12:37",
+ "updated": "2026-08-10 09:16",
  "counts": {
   "EXSEA": 22,
   "NILE": 20,
   "NILE-TradeIn": 0,
-  "ATM": 297
+  "ATM": 269
  },
  "cars": [
   {
@@ -1753,24 +1753,6 @@ window.INVENTORY = {
   },
   {
    "source": "ATM",
-   "name": "TOYOTA CAMRY Leather Package",
-   "grade": "",
-   "year": "2021",
-   "km": "43,011",
-   "fob_jpy": 2537240,
-   "fob_usd": 16915,
-   "link": "https://atm-international.co.jp/products/toyota-camry-leather-package-ch0000062181",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_f73f624f-60c3-4702-9746-96c1037f0e04.jpg?v=1784883304",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_f73f624f-60c3-4702-9746-96c1037f0e04.jpg?v=1784883304",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_b621e09b-9c14-44ca-a799-5a38144bb9ad.jpg?v=1784883304",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_dc4fab1e-ee3b-4e61-bb2c-dd38a93a7e27.jpg?v=1784883304"
-   ],
-   "fuel": "Hybrid",
-   "ref": "CH0000062181"
-  },
-  {
-   "source": "ATM",
    "name": "DAIHATSU TANTO CUSTOM X LIMITED",
    "grade": "",
    "year": "2026",
@@ -1876,24 +1858,6 @@ window.INVENTORY = {
    ],
    "fuel": "Petrol",
    "ref": "CH0000062166"
-  },
-  {
-   "source": "ATM",
-   "name": "TOYOTA SIENTA Hybrid Z",
-   "grade": "",
-   "year": "2024",
-   "km": "24,322",
-   "fob_jpy": 1890927,
-   "fob_usd": 12606,
-   "link": "https://atm-international.co.jp/products/toyota-sienta-hybrid-z-ch0000062165",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_da132663-0a10-4aa8-9860-038410927d94.jpg?v=1784870404",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_da132663-0a10-4aa8-9860-038410927d94.jpg?v=1784870404",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_3ed75efc-78e7-443a-a3c5-0b22c6a1f557.jpg?v=1784870404",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_691c6c5d-51b0-490a-90cb-2d58eb2aa674.jpg?v=1784870404"
-   ],
-   "fuel": "Hybrid",
-   "ref": "CH0000062165"
   },
   {
    "source": "ATM",
@@ -2221,24 +2185,6 @@ window.INVENTORY = {
   },
   {
    "source": "ATM",
-   "name": "HONDA ZR-V Z",
-   "grade": "",
-   "year": "2023",
-   "km": "22,365",
-   "fob_jpy": 2278714,
-   "fob_usd": 15191,
-   "link": "https://atm-international.co.jp/products/honda-zr-v-z-ch0000062109",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_d5ea2f5c-b442-40e3-b79a-4bee9f75e478.jpg?v=1784855412",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_d5ea2f5c-b442-40e3-b79a-4bee9f75e478.jpg?v=1784855412",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_bee30b30-1630-437f-8580-08e5231df664.jpg?v=1784855412",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_a9b2a4cb-9f96-48ab-aca5-c9577e199852.jpg?v=1784855412"
-   ],
-   "fuel": "Petrol",
-   "ref": "CH0000062109"
-  },
-  {
-   "source": "ATM",
    "name": "MAZDA CAROL GL Safety Support",
    "grade": "",
    "year": "2023",
@@ -2308,24 +2254,6 @@ window.INVENTORY = {
    ],
    "fuel": "Petrol",
    "ref": "CH0000062043"
-  },
-  {
-   "source": "ATM",
-   "name": "HONDA N-WGN CUSTOM G Turbo Package",
-   "grade": "",
-   "year": "2014",
-   "km": "45,988",
-   "fob_jpy": 579836,
-   "fob_usd": 3866,
-   "link": "https://atm-international.co.jp/products/honda-n-wgn-custom-g-turbo-package-ch0000062028",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_74d6f1c8-0e99-47a4-811c-7285bb6363c2.jpg?v=1784705469",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_74d6f1c8-0e99-47a4-811c-7285bb6363c2.jpg?v=1784705469",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_29fed02e-050f-4a2f-8289-a8dbac4a6b29.jpg?v=1784705469",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_c74e9509-ae78-40a8-8731-b862759f8791.jpg?v=1784705469"
-   ],
-   "fuel": "Petrol",
-   "ref": "CH0000062028"
   },
   {
    "source": "ATM",
@@ -2491,24 +2419,6 @@ window.INVENTORY = {
   },
   {
    "source": "ATM",
-   "name": "TOYOTA COROLLA FIELDER G WxB",
-   "grade": "",
-   "year": "2016",
-   "km": "76,000",
-   "fob_jpy": 1013788,
-   "fob_usd": 6759,
-   "link": "https://atm-international.co.jp/products/toyota-corolla-fielder-g-wxb-ch0000061521",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_169f6f0e-a218-4b3a-b77c-bc54a005fbe6.jpg?v=1784702347",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_169f6f0e-a218-4b3a-b77c-bc54a005fbe6.jpg?v=1784702347",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_e34aaf59-2a2f-496a-891c-8a5b27800477.jpg?v=1784702347",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_264c07a4-9fe1-4b54-9c0d-abb7dfe85742.jpg?v=1784702347"
-   ],
-   "fuel": "Petrol",
-   "ref": "CH0000061521"
-  },
-  {
-   "source": "ATM",
    "name": "SUBARU PREO PLUS G",
    "grade": "",
    "year": "2021",
@@ -2542,24 +2452,6 @@ window.INVENTORY = {
    ],
    "fuel": "Hybrid",
    "ref": "CH0000055224"
-  },
-  {
-   "source": "ATM",
-   "name": "TOYOTA AQUA Z",
-   "grade": "",
-   "year": "2024",
-   "km": "13,283",
-   "fob_jpy": 1752432,
-   "fob_usd": 11683,
-   "link": "https://atm-international.co.jp/products/toyota-aqua-z-ch0000049278",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_790d997c-b2c0-4193-bae5-1c51eb62c9f5.jpg?v=1784701742",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_790d997c-b2c0-4193-bae5-1c51eb62c9f5.jpg?v=1784701742",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_7b4434f6-e8e4-4048-822d-015ca3a9c5fb.jpg?v=1784701741",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_cb79d11d-6b7e-42da-a435-e39461aafa73.jpg?v=1784701741"
-   ],
-   "fuel": "Hybrid",
-   "ref": "CH0000049278"
   },
   {
    "source": "ATM",
@@ -2758,24 +2650,6 @@ window.INVENTORY = {
    ],
    "fuel": "Hybrid",
    "ref": "CH0000061990"
-  },
-  {
-   "source": "ATM",
-   "name": "SUZUKI RAV4 PA High Roof",
-   "grade": "",
-   "year": "2014",
-   "km": "30,250",
-   "fob_jpy": 367474,
-   "fob_usd": 2450,
-   "link": "https://atm-international.co.jp/products/suzuki-rav4-pa-high-roof-ch0000061957",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_f830384c-596e-4104-a77d-121bffd8de4b.jpg?v=1784698819",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_f830384c-596e-4104-a77d-121bffd8de4b.jpg?v=1784698819",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_8_7d456ca7-4963-47ce-b24b-c51da5eb44fc.jpg?v=1784698819",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_a08f0ff8-a015-4816-b2c4-0036db966df3.jpg?v=1784698819"
-   ],
-   "fuel": "Petrol",
-   "ref": "CH0000061957"
   },
   {
    "source": "ATM",
@@ -3211,42 +3085,6 @@ window.INVENTORY = {
   },
   {
    "source": "ATM",
-   "name": "TOYOTA GR86 RZ",
-   "grade": "",
-   "year": "2024",
-   "km": "3,691",
-   "fob_jpy": 2888096,
-   "fob_usd": 19254,
-   "link": "https://atm-international.co.jp/products/toyota-gr86-rz-ch0000061926",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_5b4e45cb-dab6-4b2c-b085-0e791b01c7f0.jpg?v=1784618291",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_5b4e45cb-dab6-4b2c-b085-0e791b01c7f0.jpg?v=1784618291",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_acf7f236-7624-4052-a89a-cb6fa426c8d6.jpg?v=1784618290",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_5f0cb4cd-b604-4a60-a82c-25a3c4c0ee5a.jpg?v=1784618291"
-   ],
-   "fuel": "Petrol",
-   "ref": "CH0000061926"
-  },
-  {
-   "source": "ATM",
-   "name": "NISSAN X-TRAIL S",
-   "grade": "",
-   "year": "2017",
-   "km": "68,164",
-   "fob_jpy": 875292,
-   "fob_usd": 5835,
-   "link": "https://atm-international.co.jp/products/nissan-x-trail-s-ch0000061918",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/WK00153781_5.jpg?v=1784618159",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/WK00153781_5.jpg?v=1784618159",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_1_f5a1398c-2ede-4865-b45c-850cd48435fa.jpg?v=1784618056",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_51c46ca9-7a6a-4e11-9f0a-f05c2d096a85.jpg?v=1784618056"
-   ],
-   "fuel": "Petrol",
-   "ref": "CH0000061918"
-  },
-  {
-   "source": "ATM",
    "name": "MITSUBISHI DELICA D:2 CUSTOM Hybrid SV",
    "grade": "",
    "year": "2019",
@@ -3643,24 +3481,6 @@ window.INVENTORY = {
   },
   {
    "source": "ATM",
-   "name": "TOYOTA PASSO X L Package",
-   "grade": "",
-   "year": "2020",
-   "km": "46,370",
-   "fob_jpy": 607534,
-   "fob_usd": 4050,
-   "link": "https://atm-international.co.jp/products/toyota-passo-x-l-package-ch0000061574",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_46c08166-fae5-40c7-b872-ae58209b1927.jpg?v=1784604537",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_46c08166-fae5-40c7-b872-ae58209b1927.jpg?v=1784604537",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_c7da9f92-fcbc-4f19-b096-28ec4fdb525e.jpg?v=1784604537",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_2a58a58c-1675-4bb8-894c-33a1cc989796.jpg?v=1784604537"
-   ],
-   "fuel": "Petrol",
-   "ref": "CH0000061574"
-  },
-  {
-   "source": "ATM",
    "name": "NISSAN CARAVAN Grand Premium GX",
    "grade": "",
    "year": "2022",
@@ -3913,24 +3733,6 @@ window.INVENTORY = {
   },
   {
    "source": "ATM",
-   "name": "HONDA S660 ƒ¿",
-   "grade": "",
-   "year": "",
-   "km": "",
-   "fob_jpy": 1577463,
-   "fob_usd": 10516,
-   "link": "https://atm-international.co.jp/products/honda-s660-ƒ-ch0000061421",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_4766f60b-6ab6-46e6-8c6c-500363950a61.jpg?v=1781500916",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_4766f60b-6ab6-46e6-8c6c-500363950a61.jpg?v=1781500916",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_8766d5ac-4dac-4a0d-b3b5-79429b25ba1a.jpg?v=1781500916",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_fe21a742-a852-411d-8e9c-383d1341a2ad.jpg?v=1781500916"
-   ],
-   "fuel": "Petrol",
-   "ref": "CH0000061421"
-  },
-  {
-   "source": "ATM",
    "name": "NISSAN NOTE X",
    "grade": "",
    "year": "2024",
@@ -3964,24 +3766,6 @@ window.INVENTORY = {
    ],
    "fuel": "Petrol",
    "ref": "CH0000061411"
-  },
-  {
-   "source": "ATM",
-   "name": "NISSAN SERENA e-POWER Highway Star V",
-   "grade": "",
-   "year": "2022",
-   "km": "20,988",
-   "fob_jpy": 2310729,
-   "fob_usd": 15405,
-   "link": "https://atm-international.co.jp/products/nissan-serena-e-power-highway-star-v-ch0000061395",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_4afb72a9-2fa0-4404-bb8b-1054fa1e7a93.jpg?v=1781500311",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_4afb72a9-2fa0-4404-bb8b-1054fa1e7a93.jpg?v=1781500311",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_a151d5f6-e213-4ad2-93f6-2ce6b82f915e.jpg?v=1781500311",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_e6f4ffbd-634b-4878-8634-8320f8ef5bb2.jpg?v=1781500311"
-   ],
-   "fuel": "Hybrid",
-   "ref": "CH0000061395"
   },
   {
    "source": "ATM",
@@ -4090,42 +3874,6 @@ window.INVENTORY = {
    ],
    "fuel": "Hybrid",
    "ref": "CH0000061364"
-  },
-  {
-   "source": "ATM",
-   "name": "HONDA N BOX CUSTOM Base Grade",
-   "grade": "",
-   "year": "2024",
-   "km": "5,447",
-   "fob_jpy": 1342442,
-   "fob_usd": 8950,
-   "link": "https://atm-international.co.jp/products/honda-n-box-custom-base-grade-ch0000061363",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_d5119d5c-f705-44b9-9573-287b1adf8929.jpg?v=1781498042",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_d5119d5c-f705-44b9-9573-287b1adf8929.jpg?v=1781498042",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_3f134945-cdca-435c-842d-b150caa3bcbb.jpg?v=1781498042",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_53f82a5c-a1ba-4f12-8532-838d59cf9f6e.jpg?v=1781498042"
-   ],
-   "fuel": "Petrol",
-   "ref": "CH0000061363"
-  },
-  {
-   "source": "ATM",
-   "name": "NISSAN X-TRAIL Xi V Selection Extreme X",
-   "grade": "",
-   "year": "2021",
-   "km": "37,124",
-   "fob_jpy": 1840688,
-   "fob_usd": 12271,
-   "link": "https://atm-international.co.jp/products/nissan-x-trail-xi-v-selection-extreme-x-ch0000061357",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_34_9a177e1b-8ad0-4ffd-b4c2-a6fc80eb1e8a.jpg?v=1781493571",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_34_9a177e1b-8ad0-4ffd-b4c2-a6fc80eb1e8a.jpg?v=1781493571",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_1_c6e41f22-2760-4096-beb4-6190c7577f20.jpg?v=1781493571",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_ed14c090-9988-4bd7-a537-6cdca069839e.jpg?v=1781493571"
-   ],
-   "fuel": "Petrol",
-   "ref": "CH0000061357"
   },
   {
    "source": "ATM",
@@ -4399,24 +4147,6 @@ window.INVENTORY = {
   },
   {
    "source": "ATM",
-   "name": "HONDA N BOX CUSTOM G L Package",
-   "grade": "",
-   "year": "2015",
-   "km": "36,151",
-   "fob_jpy": 712584,
-   "fob_usd": 4751,
-   "link": "https://atm-international.co.jp/products/honda-n-box-custom-g-l-package-ch0000061243",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/WK00152954_5.jpg?v=1781242766",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/WK00152954_5.jpg?v=1781242766",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/WK00152954_7.jpg?v=1781242766",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/WK00152954_8.jpg?v=1781242766"
-   ],
-   "fuel": "Petrol",
-   "ref": "CH0000061243"
-  },
-  {
-   "source": "ATM",
    "name": "SUZUKI ALTO LAPIN L",
    "grade": "",
    "year": "2019",
@@ -4633,60 +4363,6 @@ window.INVENTORY = {
   },
   {
    "source": "ATM",
-   "name": "SUZUKI SPACIA CUSTOM Hybrid XS Safe Support",
-   "grade": "",
-   "year": "2023",
-   "km": "19,458",
-   "fob_jpy": 1286037,
-   "fob_usd": 8574,
-   "link": "https://atm-international.co.jp/products/suzuki-spacia-custom-hybrid-xs-safe-support-ch0000060876",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_6c033a59-122f-458f-8d16-e4a88c44e9b5.jpg?v=1781163866",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_6c033a59-122f-458f-8d16-e4a88c44e9b5.jpg?v=1781163866",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_77ca87ae-db65-49ad-a709-1e8c0cd46b0e.jpg?v=1781163866",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_8_96426504-6566-4883-8099-3172721f9262.jpg?v=1781163866"
-   ],
-   "fuel": "Hybrid",
-   "ref": "CH0000060876"
-  },
-  {
-   "source": "ATM",
-   "name": "TOYOTA NOAH Si W×B3",
-   "grade": "",
-   "year": "2021",
-   "km": "26,957",
-   "fob_jpy": 2254324,
-   "fob_usd": 15029,
-   "link": "https://atm-international.co.jp/products/toyota-noah-si-w-b3-ch0000060866",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_39_c33186c1-7a28-4555-861e-530cd9a016e5.jpg?v=1781163558",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_39_c33186c1-7a28-4555-861e-530cd9a016e5.jpg?v=1781163558",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_40_a24f9e1f-76ed-4adb-8d78-e6797947ac63.jpg?v=1781163558",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_41_bbd90437-402f-4466-8a8a-90e604841e2c.jpg?v=1781163558"
-   ],
-   "fuel": "Petrol",
-   "ref": "CH0000060866"
-  },
-  {
-   "source": "ATM",
-   "name": "SUZUKI ALTO LAPIN X",
-   "grade": "",
-   "year": "2025",
-   "km": "679",
-   "fob_jpy": 1229631,
-   "fob_usd": 8198,
-   "link": "https://atm-international.co.jp/products/suzuki-alto-lapin-x-ch0000060822",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_cec39265-c7ce-4990-ab7e-c55fc0049883.jpg?v=1781163451",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_cec39265-c7ce-4990-ab7e-c55fc0049883.jpg?v=1781163451",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_7ddd896e-1963-40aa-9802-05ffca28682a.jpg?v=1781163450",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_7_e75f51d2-44c5-4ad8-b121-62c3c46331d3.jpg?v=1781163450"
-   ],
-   "fuel": "Petrol",
-   "ref": "CH0000060822"
-  },
-  {
-   "source": "ATM",
    "name": "SUZUKI JIMNY NOMAD FC",
    "grade": "",
    "year": "2026",
@@ -4900,24 +4576,6 @@ window.INVENTORY = {
    ],
    "fuel": "Hybrid",
    "ref": "CH0000049237"
-  },
-  {
-   "source": "ATM",
-   "name": "NISSAN SERENA Highway Star G",
-   "grade": "",
-   "year": "2017",
-   "km": "44,786",
-   "fob_jpy": 1192869,
-   "fob_usd": 7952,
-   "link": "https://atm-international.co.jp/products/nissan-serena-highway-star-g-ch0000049969",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/WK00139950_5.jpg?v=1777620355",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/WK00139950_5.jpg?v=1777620355",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/WK00139950_7.jpg?v=1777620355",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/WK00139950_8.jpg?v=1777620355"
-   ],
-   "fuel": "Hybrid",
-   "ref": "CH0000049969"
   },
   {
    "source": "ATM",
@@ -5281,24 +4939,6 @@ window.INVENTORY = {
   },
   {
    "source": "ATM",
-   "name": "DAIHATSU TANTO CUSTOM RS Style Selection",
-   "grade": "",
-   "year": "2021",
-   "km": "37,928",
-   "fob_jpy": 1268727,
-   "fob_usd": 8458,
-   "link": "https://atm-international.co.jp/products/daihatsu-tanto-custom-rs-style-selection-ch0000058404",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_ce7a132a-9e58-4abd-8ac5-a0a1726d2bcd.jpg?v=1777270712",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_ce7a132a-9e58-4abd-8ac5-a0a1726d2bcd.jpg?v=1777270712",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_5833fe83-57a1-4358-ae27-87de063d241a.jpg?v=1777270712",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_051c4bb0-b739-4d2b-b245-32cf1ae4ca40.jpg?v=1777270712"
-   ],
-   "fuel": "Petrol",
-   "ref": "CH0000058404"
-  },
-  {
-   "source": "ATM",
    "name": "SUZUKI SOLIO BANDIT Hybrid MV",
    "grade": "",
    "year": "2025",
@@ -5368,42 +5008,6 @@ window.INVENTORY = {
    ],
    "fuel": "Petrol",
    "ref": "CH0000058516"
-  },
-  {
-   "source": "ATM",
-   "name": "MITSUBISHI EK WAGON M",
-   "grade": "",
-   "year": "2024",
-   "km": "4,386",
-   "fob_jpy": 1012706,
-   "fob_usd": 6751,
-   "link": "https://atm-international.co.jp/products/mitsubishi-ek-wagon-m-ch0000058632",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_296f1357-d1c1-4ebe-80f7-75491486dbed.jpg?v=1777020177",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_296f1357-d1c1-4ebe-80f7-75491486dbed.jpg?v=1777020177",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_fb97bfb4-103e-4888-ae75-0e0a4c8916ca.jpg?v=1777020177",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_10_c3e44d2e-f64b-4a1f-b9a3-a8f47608ec69.jpg?v=1777020177"
-   ],
-   "fuel": "Petrol",
-   "ref": "CH0000058632"
-  },
-  {
-   "source": "ATM",
-   "name": "DAIHATSU HIJET CARGO Special Crean",
-   "grade": "",
-   "year": "2020",
-   "km": "16,107",
-   "fob_jpy": 728238,
-   "fob_usd": 4855,
-   "link": "https://atm-international.co.jp/products/daihatsu-hijet-cargo-special-crean-ch0000058808",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_12_7b090e59-41e7-4e06-8a0c-dd7cd823a900.jpg?v=1777010929",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_12_7b090e59-41e7-4e06-8a0c-dd7cd823a900.jpg?v=1777010929",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_5_6289e3ea-8733-4f49-b784-188801a90674.jpg?v=1777010929",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_9505d468-036a-44db-afc0-ce2ea4413676.jpg?v=1777010929"
-   ],
-   "fuel": "Petrol",
-   "ref": "CH0000058808"
   },
   {
    "source": "ATM",
@@ -5494,42 +5098,6 @@ window.INVENTORY = {
    ],
    "fuel": "Hybrid",
    "ref": "CH0000059436"
-  },
-  {
-   "source": "ATM",
-   "name": "TOYOTA ROOMY Custom G",
-   "grade": "",
-   "year": "2021",
-   "km": "39,563",
-   "fob_jpy": 1088565,
-   "fob_usd": 7257,
-   "link": "https://atm-international.co.jp/products/toyota-roomy-custom-g-ch0000059444",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_c3f9205a-b45d-4e4d-95a9-ba1f9b67e8c9.jpg?v=1776996145",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_c3f9205a-b45d-4e4d-95a9-ba1f9b67e8c9.jpg?v=1776996145",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_6076cd0c-83c3-4579-bc80-b2d7669a2cd3.jpg?v=1776996145",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_f3fd15ce-ef71-4081-b78d-9897c004c453.jpg?v=1776996145"
-   ],
-   "fuel": "Petrol",
-   "ref": "CH0000059444"
-  },
-  {
-   "source": "ATM",
-   "name": "TOYOTA RAIZE G",
-   "grade": "",
-   "year": "2024",
-   "km": "16,551",
-   "fob_jpy": 1638536,
-   "fob_usd": 10924,
-   "link": "https://atm-international.co.jp/products/toyota-raize-g-ch0000059447",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_e09b941e-7595-4b69-bcfc-2379e0ab89eb.jpg?v=1776995914",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_e09b941e-7595-4b69-bcfc-2379e0ab89eb.jpg?v=1776995914",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_a373bc29-70e6-4f8a-92b7-b1458c645b47.jpg?v=1776995914",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_218ef758-ef91-45eb-ad55-6d4f53e74e99.jpg?v=1776995914"
-   ],
-   "fuel": "Petrol",
-   "ref": "CH0000059447"
   },
   {
    "source": "ATM",
@@ -5767,24 +5335,6 @@ window.INVENTORY = {
   },
   {
    "source": "ATM",
-   "name": "DAIHATSU COPEN Cero",
-   "grade": "",
-   "year": "2023",
-   "km": "20,509",
-   "fob_jpy": 1610090,
-   "fob_usd": 10734,
-   "link": "https://atm-international.co.jp/products/daihatsu-copen-cero-ch0000059832",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_fa59d7ba-5d3e-455d-b090-317eaa95930b.jpg?v=1776669201",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_fa59d7ba-5d3e-455d-b090-317eaa95930b.jpg?v=1776669201",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_16e83e3a-4acf-4538-86b0-da97b69f0835.jpg?v=1776669201",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_11_2b12be74-bbaa-47a2-a5c7-bbd00b847038.jpg?v=1776669201"
-   ],
-   "fuel": "Petrol",
-   "ref": "CH0000059832"
-  },
-  {
-   "source": "ATM",
    "name": "SUZUKI JIMNY NOMAD FC",
    "grade": "",
    "year": "2026",
@@ -5893,24 +5443,6 @@ window.INVENTORY = {
   },
   {
    "source": "ATM",
-   "name": "SUZUKI ALTO LAPIN LC X",
-   "grade": "",
-   "year": "2025",
-   "km": "2,071",
-   "fob_jpy": 1382514,
-   "fob_usd": 9217,
-   "link": "https://atm-international.co.jp/products/suzuki-alto-lapin-lc-x-ch0000059651",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_a7b16f5d-9965-4152-ae93-dbdd12644d89.jpg?v=1776736006",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_a7b16f5d-9965-4152-ae93-dbdd12644d89.jpg?v=1776736006",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_5f76af3f-363c-4f5a-ba87-07efc27a695c.jpg?v=1776736006",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_3ff08ae5-dfb6-44ce-ae54-4e57ca9cfaa2.jpg?v=1776736006"
-   ],
-   "fuel": "Petrol",
-   "ref": "CH0000059651"
-  },
-  {
-   "source": "ATM",
    "name": "DAIHATSU MOVE RS Turbo",
    "grade": "",
    "year": "2025",
@@ -5965,24 +5497,6 @@ window.INVENTORY = {
   },
   {
    "source": "ATM",
-   "name": "SUZUKI ALTO LAPIN G",
-   "grade": "",
-   "year": "2024",
-   "km": "7,276",
-   "fob_jpy": 1050636,
-   "fob_usd": 7004,
-   "link": "https://atm-international.co.jp/products/suzuki-alto-lapin-g-ch0000059640",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_4df0d57f-e6a7-435d-81d2-8bed754c82b3.jpg?v=1776737960",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_4df0d57f-e6a7-435d-81d2-8bed754c82b3.jpg?v=1776737960",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_9_0601c2ff-1703-4790-a4c2-fc5ef7a7e203.jpg?v=1776737960",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_8_d17b811c-540e-4f7b-88bd-ba2e14110c8b.jpg?v=1776737960"
-   ],
-   "fuel": "Petrol",
-   "ref": "CH0000059640"
-  },
-  {
-   "source": "ATM",
    "name": "DAIHATSU BOON Style SA3",
    "grade": "",
    "year": "2019",
@@ -5998,24 +5512,6 @@ window.INVENTORY = {
    ],
    "fuel": "Petrol",
    "ref": "CH0000059638"
-  },
-  {
-   "source": "ATM",
-   "name": "TOYOTA CAMRY G",
-   "grade": "",
-   "year": "2020",
-   "km": "37,273",
-   "fob_jpy": 2254884,
-   "fob_usd": 15033,
-   "link": "https://atm-international.co.jp/products/toyota-camry-g-ch0000059636",
-   "img": "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_d9b81e4c-558e-4be3-b547-817d5921c751.jpg?v=1776738561",
-   "imgs": [
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_d9b81e4c-558e-4be3-b547-817d5921c751.jpg?v=1776738561",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_2_73251cab-c0d5-47c3-adbc-a86b584458d7.jpg?v=1776738561",
-    "https://cdn.shopify.com/s/files/1/0676/6179/1306/files/GetPicture_3_d1eb7f1b-acb9-4c9e-9d54-12c3a5cc2f83.jpg?v=1776738561"
-   ],
-   "fuel": "Petrol",
-   "ref": "CH0000059636"
   },
   {
    "source": "ATM",
