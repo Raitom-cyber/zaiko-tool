@@ -124,7 +124,9 @@
     <div class="f"><label id="taxLabel">GST（%）</label><input type="number" id="gst" value="15" step="1"></div>
     <div class="f"><label>WhatsApp送信先（任意・国番号から）</label><input type="text" id="waNum" placeholder="例 64211234567"></div>
     <div class="f"><label>メール送信先（任意）</label><input type="text" id="mailTo" placeholder="buyer@example.com"></div>
-    <div class="note" id="calcNote">Landed Cost (CIF) = FOB + Freight ／ 税込 = CIF × (1+税率)　※国を切り替えるとレート・運賃・税率がその国の保存値に変わり、全車両が即再計算されます。</div>
+    <div class="f"><label>　</label><button class="btn gold" onclick="fetchFX(true)">🔄 今の為替を取得</button></div>
+    <div class="note" id="fxNote">為替を取得中...</div>
+    <div class="note" id="calcNote">Landed Cost (CIF) = FOB + Freight ／ 税込 = CIF × (1+税率)　※国を切り替えるとレート・運賃・税率がその国の保存値に変わり、全車両が即再計算されます。ATM在庫はサイトのUSD価格が正 → 今の為替で円換算 → 選択通貨に換算します。</div>
   </div>
 
   <!-- 燃料タブ -->
@@ -283,10 +285,79 @@ function rate(){ return parseFloat(document.getElementById('rate').value) || mk(
 function freight(){ return parseFloat(document.getElementById('freight').value) || 0; }
 function gstPct(){ return (parseFloat(document.getElementById('gst').value) || 0)/100; }
 
+// ---------- ライブ為替（USD基準で全通貨を自動取得・ATMクレーム対策の核心） ----------
+// ATM在庫はサイト上USD建てが正。USD→今の為替で円→選択通貨、の順で必ず換算する。
+const FX_APIS = ["https://open.er-api.com/v6/latest/USD",
+                 "https://api.frankfurter.dev/v1/latest?base=USD"];
+const CUR_ISO = {NZD:"NZD", USD:"USD", AUD:"AUD", MYR:"MYR", KES:"USD"};  // KESはUS$建て運用
+let FX = {ts:0, usdjpy:0, jpyPer:{}};   // jpyPer[市場キー] = その通貨1単位あたりの円
+try{ FX = JSON.parse(localStorage.getItem('zaiko_fx')) || FX; }catch(e){}
+
+function usdjpy(){ return FX.usdjpy || (MKT.USD && MKT.USD.rate) || MARKETS.USD.rate; }
+
+function normalizeAtm(){
+  // ATM車のFOB円をサイトのUSD価格×今の為替で計算し直す（データ生成時の固定レートを上書き）
+  if(!FX.usdjpy) return;
+  INV.cars.forEach(c=>{
+    if(c.source==="ATM" && c.fob_usd) c.fob_jpy = Math.round(c.fob_usd * FX.usdjpy);
+  });
+}
+function applyFxToMarkets(){
+  if(!FX.usdjpy) return;
+  Object.keys(MARKETS).forEach(k=>{
+    const per = FX.jpyPer[k];
+    if(per) MKT[k] = Object.assign({}, MKT[k], {rate: Math.round(per*100)/100});
+  });
+  localStorage.setItem('zaiko_mkt', JSON.stringify(MKT));
+  document.getElementById('rate').value = mval('rate');
+}
+function fxNote(){
+  const el = document.getElementById('fxNote');
+  if(!el) return;
+  if(FX.usdjpy){
+    const d = new Date(FX.ts);
+    el.innerHTML = `🔄 <b style="color:var(--green)">ライブ為替適用中</b>: US$1 = ¥${FX.usdjpy.toFixed(2)}` +
+      Object.keys(MARKETS).filter(k=>CUR_ISO[k]!=="USD" && FX.jpyPer[k]).map(k=>` ／ ${MARKETS[k].cur}1 = ¥${FX.jpyPer[k].toFixed(2)}`).join("") +
+      `（取得: ${isNaN(d)?"-":d.toLocaleString("ja-JP")}）※レート欄は手動修正も可（次回取得で上書き）`;
+  } else {
+    el.innerHTML = `⚠️ ライブ為替を未取得です。レート欄の手入力値で計算中 —「🔄 今の為替を取得」を押してください（要ネット接続）。`;
+  }
+}
+async function fetchFX(manual){
+  let ok = false;
+  for(const url of FX_APIS){
+    try{
+      const res = await fetch(url, {cache:"no-store"});
+      const j = await res.json();
+      const r = j && j.rates;
+      if(!(r && r.JPY > 50 && r.JPY < 500)) continue;
+      FX.usdjpy = r.JPY;
+      FX.jpyPer = {};
+      Object.keys(MARKETS).forEach(k=>{
+        const iso = CUR_ISO[k];
+        FX.jpyPer[k] = iso==="USD" ? r.JPY : (r[iso] ? r.JPY / r[iso] : 0);
+      });
+      FX.ts = j.time_last_update_unix ? j.time_last_update_unix*1000 : Date.now();
+      localStorage.setItem('zaiko_fx', JSON.stringify(FX));
+      ok = true;
+      break;
+    }catch(e){ /* 次のAPIへ */ }
+  }
+  normalizeAtm();
+  if(ok) applyFxToMarkets();
+  fxNote();
+  render();
+  if(manual && ok) toast(`為替を更新しました ✔ US$1 = ¥${FX.usdjpy.toFixed(2)}`);
+  if(manual && !ok) alert("為替の取得に失敗しました。ネット接続を確認してください。\n（保存済みレートまたは手入力レートで計算を続けます）");
+}
+
 // エクセル計算機と同じ: FOB通貨 = FOB円/レート、CIF = FOB+Freight、税込 = CIF×(1+税率)
+// ATM（USD建て）はサイトのUSD価格を直接起点に USD→円→選択通貨 の順で換算（円丸めの誤差を出さない）
 function calc(car){
   if(!car.fob_jpy) return null;
-  const fobCur = car.fob_jpy / rate();
+  const o = OVR[car.source + "|" + car.link];
+  const useUsd = car.source==="ATM" && car.fob_usd && !(o && o.fob_jpy != null);
+  const fobCur = useUsd ? car.fob_usd * usdjpy() / rate() : car.fob_jpy / rate();
   const cif = fobCur + freight();
   const landed = cif * (1 + gstPct());
   return {fobNZD: Math.round(fobCur), fobCur: Math.round(fobCur), cif: Math.round(cif), landed: Math.round(landed)};
@@ -357,8 +428,9 @@ function render(){
         <div class="name">${c.year} ${esc(c.name)}${c.grade?` <span style="color:var(--sub);font-weight:400">${esc(c.grade)}</span>`:''}</div>
         <div class="specs">${fmt(parseInt((c.km+'').replace(/,/g,'')))} km ${c.ref?` ／ Ref: ${c.ref}`:''}</div>
         <div class="prices">
-          <div class="row"><span>FOB（円）</span><b>${c.fob_jpy?`¥${fmt(c.fob_jpy)}`:'要問合せ'}</b></div>
-          ${p?`<div class="row"><span>FOB（${cur()}）</span><b>${cur()}${fmt(p.fobCur)}</b></div>
+          ${c.source==='ATM'&&c.fob_usd?`<div class="row"><span>FOB（US$・サイト価格）</span><b>US$${fmt(c.fob_usd)}</b></div>`:''}
+          <div class="row"><span>FOB（円${c.source==='ATM'?'換算':''}）</span><b>${c.fob_jpy?`¥${fmt(c.fob_jpy)}`:'要問合せ'}</b></div>
+          ${p?`${cur()!=='US$'||c.source!=='ATM'?`<div class="row"><span>FOB（${cur()}）</span><b>${cur()}${fmt(p.fobCur)}</b></div>`:''}
           <div class="row cif"><span>Landed CIF+税込</span><b>${cur()}${fmt(p.landed)}</b></div>`:''}
         </div>
         <div class="acts">
@@ -465,10 +537,19 @@ function buildMessage(cars){
     sellingPoints(c).forEach(s=> lines.push(`   ${s}`));
     lines.push(`   • ${c.km} km`);
     if(c.fob_jpy){
+      const atmUsd = c.source==="ATM" && c.fob_usd;   // ATMはUSD建てが正
       if(c._orig_fob){
-        lines.push(`   • 💰 SPECIAL OFFER: FOB JPY ${fmt(c.fob_jpy)} (was JPY ${fmt(c._orig_fob)}) — approx. ${C}${fmt(p.fobCur)}`);
+        if(atmUsd){
+          lines.push(`   • 💰 SPECIAL OFFER: FOB US$${fmt(c.fob_usd)}${c._orig_usd?` (was US$${fmt(c._orig_usd)})`:''}${C!=="US$"?` — approx. ${C}${fmt(p.fobCur)}`:''}`);
+        } else {
+          lines.push(`   • 💰 SPECIAL OFFER: FOB JPY ${fmt(c.fob_jpy)} (was JPY ${fmt(c._orig_fob)}) — approx. ${C}${fmt(p.fobCur)}`);
+        }
       } else {
-        lines.push(`   • FOB: JPY ${fmt(c.fob_jpy)} (approx. ${C}${fmt(p.fobCur)})`);
+        if(atmUsd){
+          lines.push(`   • FOB: US$${fmt(c.fob_usd)}${C!=="US$"?` (approx. ${C}${fmt(p.fobCur)})`:''}`);
+        } else {
+          lines.push(`   • FOB: JPY ${fmt(c.fob_jpy)} (approx. ${C}${fmt(p.fobCur)})`);
+        }
       }
       lines.push(`   • Est. Landed (${taxLabel()}): ${C}${fmt(p.landed)}`);
     } else {
@@ -478,7 +559,8 @@ function buildMessage(cars){
     lines.push(`   ${c.link}`);
     lines.push("");
   });
-  lines.push(`Rate used: ${C}1 = ¥${r} / Freight ${C}${fmt(f)} incl.`);
+  const hasAtm = cars.some(c=>c.source==="ATM" && c.fob_usd);
+  lines.push(`Rate used: ${C}1 = ¥${r}${hasAtm && C!=="US$" ? ` / US$1 = ¥${usdjpy().toFixed(2)}` : ""} / Freight ${C}${fmt(f)} incl.`);
   lines.push(...ptn.close(m));
   return lines.join("\n");
 }
@@ -490,10 +572,16 @@ function buildHtml(cars){
     const p = calc(c);
     const img = c.img ? `<a href="${c.link}"><img src="${c.img}" width="440" style="max-width:100%;border-radius:8px;display:block;margin:6px 0" alt="${esc(c.name)}"></a>` : '';
     const C = cur();
+    const atmUsd = c.source==="ATM" && c.fob_usd;   // ATMはUSD建てが正
+    const landedHtml = `Est. Landed (${taxLabel()}): <b style="color:#0b6e4f">${C}${fmt(p.landed)}</b>`;
     const price = c.fob_jpy
       ? (c._orig_fob
-        ? `💰 <b style="color:#c2410c">SPECIAL OFFER:</b> FOB <s style="color:#999">JPY ${fmt(c._orig_fob)}</s> → <b style="color:#c2410c">JPY ${fmt(c.fob_jpy)}</b> (approx. ${C}${fmt(p.fobCur)})<br>Est. Landed (${taxLabel()}): <b style="color:#0b6e4f">${C}${fmt(p.landed)}</b>`
-        : `FOB: <b>JPY ${fmt(c.fob_jpy)}</b> (approx. ${C}${fmt(p.fobCur)})<br>Est. Landed (${taxLabel()}): <b style="color:#0b6e4f">${C}${fmt(p.landed)}</b>`)
+        ? (atmUsd
+          ? `💰 <b style="color:#c2410c">SPECIAL OFFER:</b> FOB ${c._orig_usd?`<s style="color:#999">US$${fmt(c._orig_usd)}</s> → `:''}<b style="color:#c2410c">US$${fmt(c.fob_usd)}</b>${C!=="US$"?` (approx. ${C}${fmt(p.fobCur)})`:''}<br>${landedHtml}`
+          : `💰 <b style="color:#c2410c">SPECIAL OFFER:</b> FOB <s style="color:#999">JPY ${fmt(c._orig_fob)}</s> → <b style="color:#c2410c">JPY ${fmt(c.fob_jpy)}</b> (approx. ${C}${fmt(p.fobCur)})<br>${landedHtml}`)
+        : (atmUsd
+          ? `FOB: <b>US$${fmt(c.fob_usd)}</b>${C!=="US$"?` (approx. ${C}${fmt(p.fobCur)})`:''}<br>${landedHtml}`
+          : `FOB: <b>JPY ${fmt(c.fob_jpy)}</b> (approx. ${C}${fmt(p.fobCur)})<br>${landedHtml}`))
       : `Price: <b>Please ask!</b>`;
     const pts = sellingPoints(c).map(s=>`<div>${s}</div>`).join("");
     return `<div style="margin:0 0 26px 0;padding:0 0 18px 0;border-bottom:1px solid #ddd">
@@ -511,7 +599,7 @@ function buildHtml(cars){
   return `<div style="font-family:Arial,Helvetica,sans-serif;max-width:560px">
     <p style="font-size:15px">${introHtml}</p>
     ${blocks}
-    <p style="font-size:12px;color:#666">Rate used: ${C2}1 = ¥${r} / Freight ${C2}${fmt(f)} incl.</p>
+    <p style="font-size:12px;color:#666">Rate used: ${C2}1 = ¥${r}${cars.some(c=>c.source==="ATM"&&c.fob_usd) && C2!=="US$" ? ` / US$1 = ¥${usdjpy().toFixed(2)}` : ""} / Freight ${C2}${fmt(f)} incl.</p>
     <p style="font-size:14px">${closeHtml}</p>
   </div>`;
 }
@@ -548,7 +636,13 @@ function discCars(){
   return composeCars.map(c=>{
     const d = composeDisc[carKey(c)] || 0;
     if(!d || !c.fob_jpy) return c;
-    return Object.assign({}, c, { fob_jpy: Math.max(0, c.fob_jpy - d), _orig_fob: c.fob_jpy });
+    const newFob = Math.max(0, c.fob_jpy - d);
+    const o = { fob_jpy: newFob, _orig_fob: c.fob_jpy };
+    if(c.source==="ATM" && c.fob_usd){   // ATMは値引き後のUSDも今の為替で計算し直す
+      o.fob_usd = Math.round(newFob / usdjpy());
+      o._orig_usd = c.fob_usd;
+    }
+    return Object.assign({}, c, o);
   });
 }
 function refreshCompose(){
@@ -620,9 +714,10 @@ function copyPhotoLinks(){
   const links = composeCars.flatMap(c=> (c.imgs&&c.imgs.length?c.imgs:[c.img]).filter(Boolean));
   navigator.clipboard.writeText(links.join("\n")).then(toast);
 }
-function toast(){
+function toast(msg){
   const t = document.getElementById('toast');
-  t.style.display='block'; setTimeout(()=>t.style.display='none',1400);
+  t.textContent = (typeof msg === "string" && msg) ? msg : "コピーしました ✔";
+  t.style.display='block'; setTimeout(()=>t.style.display='none',1800);
 }
 
 // タブ制御
@@ -647,6 +742,9 @@ document.getElementById('srcTabs').addEventListener('click',e=>{
   applyMarketUI();
   const ps = document.getElementById('ptn');
   ps.innerHTML = PATTERNS.map((p,i)=>`<option value="${i}" ${i===curPattern?'selected':''}>${p.name}</option>`).join("");
+  normalizeAtm();   // 前回保存の為替でまず補正（オフラインでも旧固定150円のままにしない）
+  fxNote();
+  fetchFX();        // 開いた瞬間に今の為替を取得 → ATMのUSD価格を円換算し直して全体を再計算
 })();
 document.getElementById('modal').addEventListener('click',e=>{ if(e.target.id==='modal') closeModal(); });
 
