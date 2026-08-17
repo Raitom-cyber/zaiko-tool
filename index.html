@@ -316,14 +316,19 @@ function fxNote(){
   if(!el) return;
   if(FX.usdjpy){
     const d = new Date(FX.ts);
-    el.innerHTML = `🔄 <b style="color:var(--green)">ライブ為替適用中</b>: US$1 = ¥${FX.usdjpy.toFixed(2)}` +
+    const stale = (Date.now() - FX.ts) > 26*3600*1000;
+    el.innerHTML = (stale ? `⚠️ <b style="color:var(--gold)">為替が1日以上古い可能性</b>（ネット接続を確認して「🔄 今の為替を取得」を押してください）<br>` : "") +
+      `🔄 <b style="color:var(--green)">ライブ為替適用中</b>: US$1 = ¥${FX.usdjpy.toFixed(2)}` +
       Object.keys(MARKETS).filter(k=>CUR_ISO[k]!=="USD" && FX.jpyPer[k]).map(k=>` ／ ${MARKETS[k].cur}1 = ¥${FX.jpyPer[k].toFixed(2)}`).join("") +
-      `（取得: ${isNaN(d)?"-":d.toLocaleString("ja-JP")}）※レート欄は手動修正も可（次回取得で上書き）`;
+      `（取得: ${isNaN(d)?"-":d.toLocaleString("ja-JP")}）※開くたび・画面に戻るたび・30分ごとに自動で最新化。レート欄は手動修正も可（次回取得で上書き）`;
   } else {
     el.innerHTML = `⚠️ ライブ為替を未取得です。レート欄の手入力値で計算中 —「🔄 今の為替を取得」を押してください（要ネット接続）。`;
   }
 }
+let fxBusy = false;
 async function fetchFX(manual){
+  if(fxBusy) return;
+  fxBusy = true;
   let ok = false;
   for(const url of FX_APIS){
     try{
@@ -347,9 +352,14 @@ async function fetchFX(manual){
   if(ok) applyFxToMarkets();
   fxNote();
   render();
+  fxBusy = false;
   if(manual && ok) toast(`為替を更新しました ✔ US$1 = ¥${FX.usdjpy.toFixed(2)}`);
   if(manual && !ok) alert("為替の取得に失敗しました。ネット接続を確認してください。\n（保存済みレートまたは手入力レートで計算を続けます）");
 }
+// 直近為替の担保: 画面に戻ってきた時（10分以上経過なら）と、開きっぱなしでも30分ごとに自動再取得
+window.addEventListener("focus", ()=>{ if(Date.now() - FX.ts > 10*60*1000) fetchFX(); });
+document.addEventListener("visibilitychange", ()=>{ if(!document.hidden && Date.now() - FX.ts > 10*60*1000) fetchFX(); });
+setInterval(()=>fetchFX(), 30*60*1000);
 
 // エクセル計算機と同じ: FOB通貨 = FOB円/レート、CIF = FOB+Freight、税込 = CIF×(1+税率)
 // ATM（USD建て）はサイトのUSD価格を直接起点に USD→円→選択通貨 の順で換算（円丸めの誤差を出さない）
