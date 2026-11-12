@@ -1,7 +1,7 @@
 window.INVENTORY = {
- "updated": "2026-11-11 07:31",
+ "updated": "2026-11-12 09:27",
  "counts": {
-  "EXSEA": 17,
+  "EXSEA": 16,
   "NILE": 21,
   "NILE-TradeIn": 0,
   "ATM": 144
@@ -221,24 +221,6 @@ window.INVENTORY = {
     "https://exsea.jp/wp-content/uploads/2026/03/R1-46.jpg"
    ],
    "fuel": "Hybrid",
-   "ref": ""
-  },
-  {
-   "source": "EXSEA",
-   "name": "Toyota Harrier",
-   "grade": "Premium",
-   "year": "2019",
-   "km": "90468",
-   "fob_jpy": 2100000,
-   "fob_usd": 13376,
-   "link": "https://exsea.jp/auto_listing/toyota-harrier-zsu60-0182096/",
-   "img": "https://exsea.jp/wp-content/uploads/2024/04/Expert-Service-Agent2.png",
-   "imgs": [
-    "https://exsea.jp/wp-content/uploads/2024/04/Expert-Service-Agent2.png",
-    "https://exsea.jp/wp-content/uploads/2026/03/2-2-1.jpg",
-    "https://exsea.jp/wp-content/uploads/2026/03/2-14-1.jpg"
-   ],
-   "fuel": "Petrol",
    "ref": ""
   },
   {
