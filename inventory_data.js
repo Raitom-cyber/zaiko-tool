@@ -1,7 +1,7 @@
 window.INVENTORY = {
- "updated": "2026-11-19 09:01",
+ "updated": "2026-11-19 18:29",
  "counts": {
-  "EXSEA": 18,
+  "EXSEA": 20,
   "NILE": 18,
   "NILE-TradeIn": 0,
   "ATM": 172
@@ -9,12 +9,48 @@ window.INVENTORY = {
  "cars": [
   {
    "source": "EXSEA",
+   "name": "Toyota Sienta",
+   "grade": "G",
+   "year": "2011",
+   "km": "142365",
+   "fob_jpy": 320000,
+   "fob_usd": 2038,
+   "link": "https://exsea.jp/auto_listing/toyota-sienta-ncp81-5144702/",
+   "img": "https://exsea.jp/wp-content/uploads/2024/04/Expert-Service-Agent2.png",
+   "imgs": [
+    "https://exsea.jp/wp-content/uploads/2024/04/Expert-Service-Agent2.png",
+    "https://exsea.jp/wp-content/uploads/2026/11/PB194639.jpg",
+    "https://exsea.jp/wp-content/uploads/2026/11/PB194695.jpg"
+   ],
+   "fuel": "Petrol",
+   "ref": ""
+  },
+  {
+   "source": "EXSEA",
+   "name": "Honda Fit",
+   "grade": "13 G L Package",
+   "year": "2015",
+   "km": "55190",
+   "fob_jpy": 450000,
+   "fob_usd": 2866,
+   "link": "https://exsea.jp/auto_listing/honda-fit-gk3-1104198/",
+   "img": "https://exsea.jp/wp-content/uploads/2024/04/Expert-Service-Agent2.png",
+   "imgs": [
+    "https://exsea.jp/wp-content/uploads/2024/04/Expert-Service-Agent2.png",
+    "https://exsea.jp/wp-content/uploads/2026/11/PB194546.jpg",
+    "https://exsea.jp/wp-content/uploads/2026/11/PB194599.jpg"
+   ],
+   "fuel": "Petrol",
+   "ref": ""
+  },
+  {
+   "source": "EXSEA",
    "name": "Honda Fit",
    "grade": "13G",
    "year": "2013",
    "km": "86454",
-   "fob_jpy": 0,
-   "fob_usd": 0,
+   "fob_jpy": 380000,
+   "fob_usd": 2420,
    "link": "https://exsea.jp/auto_listing/honda-fit-gk3-3007297-2/",
    "img": "https://exsea.jp/wp-content/uploads/2024/04/Expert-Service-Agent2.png",
    "imgs": [
@@ -250,9 +286,13 @@ window.INVENTORY = {
    "fob_jpy": 2090000,
    "fob_usd": 13312,
    "link": "https://exsea.jp/auto_listing/toyota-rav4-axah54-2005514/",
-   "img": "",
-   "imgs": [],
-   "fuel": "Petrol",
+   "img": "https://exsea.jp/wp-content/uploads/2024/04/Expert-Service-Agent2.png",
+   "imgs": [
+    "https://exsea.jp/wp-content/uploads/2024/04/Expert-Service-Agent2.png",
+    "https://exsea.jp/wp-content/uploads/2026/03/R1-1.jpg",
+    "https://exsea.jp/wp-content/uploads/2026/03/R1-46.jpg"
+   ],
+   "fuel": "Hybrid",
    "ref": ""
   },
   {
